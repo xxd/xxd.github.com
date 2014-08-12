@@ -24,7 +24,7 @@ Open xcode and accept the option to Update to recommended settings
 -----
 #####xcode调用OC header
 在PROJECT_NAME_Prefix.pch中加入：
-```Objective-C
+``` C
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
