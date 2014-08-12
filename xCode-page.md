@@ -37,7 +37,7 @@ Open xcode and accept the option to Update to recommended settings
 今天偶然发现了下面的方法，亲测是没问题的。
 在(projectname)_Prefix.pchj里面加上如下代码：
 
-``` Ruby
+```ruby
 #ifndef __OPTIMIZE__
 #    define NSLog(...) NSLog(__VA_ARGS__)
 #else
