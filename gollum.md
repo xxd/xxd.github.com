@@ -1,4 +1,4 @@
-#### 1.安装
+#### 安装
 ```
 apt-get install ruby ruby-dev make
 apt-get install nodejs 
