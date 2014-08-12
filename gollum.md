@@ -1,4 +1,3 @@
-
 #### 1.安装
 ```
 apt-get install ruby ruby-dev make
@@ -13,7 +12,7 @@ gem install org-ruby
 ```
 
 #### 图片(https://github.com/mojombo/gollum-demo/blob/master/Mordor/Eye-Of-Sauron.md)
->![Alt attribute text Here](images/YOURIMAGE.ext)
+`![Alt attribute text Here](images/YOURIMAGE.ext)`
 
 #### sync.sh
 ```ruby
@@ -22,6 +21,7 @@ gem install org-ruby
 DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 (cd $DIR && git pull)
 ```
+
 #### gitmonitor.sh (http://blog.bigcay.com/blog/2013/04/30/Upload-Images-To-Gollum/)
 ```ruby
 #!/bin/bash
