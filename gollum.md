@@ -33,7 +33,7 @@ while inotifywait -q -r -e ATTRIB,CLOSE_WRITE,CREATE,DELETE  $UPLOAD_PATH; do
   git add -A
   git commit -a -m 'Commit to Git repository automatically.'
 done
-```ruby
+```
 
 #### Todo:
 - 直接pow來啓動gollum就行了，幾乎不用config。
