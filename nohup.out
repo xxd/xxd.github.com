@@ -1,0 +1,128 @@
+[2014-08-12 08:46:44] INFO  WEBrick 1.3.1
+[2014-08-12 08:46:44] INFO  ruby 1.9.3 (2013-11-22) [x86_64-linux]
+== Sinatra/1.4.5 has taken the stage on 4567 for development with backup from WEBrick
+[2014-08-12 08:46:44] INFO  WEBrick::HTTPServer#start: pid=8703 port=4567
+123.126.33.253 - - [12/Aug/2014:08:46:51 UTC] "GET / HTTP/1.1" 302 0
+- -> /
+123.126.33.253 - - [12/Aug/2014:08:46:51 UTC] "GET /Home HTTP/1.1" 302 0
+- -> /Home
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /create/Home HTTP/1.1" 200 6314
+- -> /create/Home
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /javascript/jquery-1.7.2.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/jquery-1.7.2.min.js
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /css/gollum.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/gollum.css
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /css/print.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/print.css
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /css/template.css HTTP/1.1" 304 0
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /css/editor.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/editor.css
+http://xxd-lab.com:4567/create/Home -> /css/template.css
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /css/dialog.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/dialog.css
+[2014-08-12 08:46:52] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:52 UTC] "GET /javascript/mousetrap.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/mousetrap.min.js
+[2014-08-12 08:46:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:53 UTC] "GET /javascript/gollum.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.js
+[2014-08-12 08:46:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:46:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:53 UTC] "GET /javascript/gollum.dialog.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.dialog.js
+[2014-08-12 08:46:53] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:46:53 UTC] "GET /javascript/editor/gollum.editor.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/editor/gollum.editor.js
+123.126.33.253 - - [12/Aug/2014:08:46:53 UTC] "GET /javascript/gollum.placeholder.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.placeholder.js
+123.126.33.253 - - [12/Aug/2014:08:46:53 UTC] "GET /javascript/editor/langs/markdown.js?_=1407833212509 HTTP/1.1" 200 11837
+http://xxd-lab.com:4567/create/Home -> /javascript/editor/langs/markdown.js?_=1407833212509
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "POST /create HTTP/1.1" 303 0
+http://xxd-lab.com:4567/create/Home -> /create
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /Home HTTP/1.1" 200 3337
+http://xxd-lab.com:4567/create/Home -> /Home
+[2014-08-12 08:48:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /javascript/jquery-1.7.2.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/jquery-1.7.2.min.js
+[2014-08-12 08:48:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /css/template.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/template.css
+[2014-08-12 08:48:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /css/dialog.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/dialog.css
+[2014-08-12 08:48:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /css/editor.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/editor.css
+[2014-08-12 08:48:38] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:38 UTC] "GET /css/print.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/print.css
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /javascript/mousetrap.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/mousetrap.min.js
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /javascript/gollum.placeholder.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.placeholder.js
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /javascript/gollum.dialog.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.dialog.js
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /javascript/editor/gollum.editor.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/editor/gollum.editor.js
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /javascript/gollum.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.js
+[2014-08-12 08:48:39] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:39 UTC] "GET /css/gollum.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/gollum.css
+[2014-08-12 08:48:40] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:48:40 UTC] "GET /images/icon-sprite.png HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /images/icon-sprite.png
+123.126.33.253 - - [12/Aug/2014:08:48:40 UTC] "GET /fonts/fontawesome-webfont.woff?v=4.0.3 HTTP/1.1" 200 44432
+http://xxd-lab.com:4567/Home -> /fonts/fontawesome-webfont.woff?v=4.0.3
+123.126.33.253 - - [12/Aug/2014:08:48:49 UTC] "GET /edit/Home HTTP/1.1" 200 5814
+http://xxd-lab.com:4567/Home -> /edit/Home
+123.126.33.253 - - [12/Aug/2014:08:48:50 UTC] "GET /javascript/editor/langs/markdown.js?_=1407833329402 HTTP/1.1" 200 11837
+http://xxd-lab.com:4567/edit/Home -> /javascript/editor/langs/markdown.js?_=1407833329402
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "POST /edit/Home HTTP/1.1" 303 0
+http://xxd-lab.com:4567/edit/Home -> /edit/Home
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /Home HTTP/1.1" 200 3347
+http://xxd-lab.com:4567/edit/Home -> /Home
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /javascript/jquery-1.7.2.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/jquery-1.7.2.min.js
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /css/print.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/print.css
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /css/editor.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/editor.css
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /css/dialog.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/dialog.css
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /css/template.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/template.css
+[2014-08-12 08:49:12] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:12 UTC] "GET /css/gollum.css HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /css/gollum.css
+[2014-08-12 08:49:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:13 UTC] "GET /javascript/mousetrap.min.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/mousetrap.min.js
+[2014-08-12 08:49:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:13 UTC] "GET /javascript/gollum.dialog.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.dialog.js
+[2014-08-12 08:49:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+[2014-08-12 08:49:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:13 UTC] "GET /javascript/gollum.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.js
+123.126.33.253 - - [12/Aug/2014:08:49:13 UTC] "GET /javascript/editor/gollum.editor.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/editor/gollum.editor.js
+[2014-08-12 08:49:13] WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true
+123.126.33.253 - - [12/Aug/2014:08:49:13 UTC] "GET /javascript/gollum.placeholder.js HTTP/1.1" 304 0
+http://xxd-lab.com:4567/create/Home -> /javascript/gollum.placeholder.js
