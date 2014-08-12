@@ -35,6 +35,7 @@ Open xcode and accept the option to Update to recommended settings
 在发布上线版本时需要关掉所有的log输出，一是听说会影响性能，二来让其他开发者看到也是显的相当不专业。以前项目组中经常中手动一个个关。也有同事试着重写系统的NSLog函数，但是没成功。
 今天偶然发现了下面的方法，亲测是没问题的。
 在(projectname)_Prefix.pchj里面加上如下代码：
+
 ```
 #ifndef __OPTIMIZE__
 #    define NSLog(...) NSLog(__VA_ARGS__)
