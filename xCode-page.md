@@ -19,7 +19,7 @@ deleting the workspace
 pod install
 Open xcode and accept the option to Update to recommended settings
 
-
+[[images/xcode-error.png]]
 -----
 #####xcode调用OC header
 在PROJECT_NAME_Prefix.pch中加入：
