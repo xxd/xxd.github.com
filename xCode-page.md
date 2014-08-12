@@ -1,12 +1,13 @@
 ####xcode & cocoapod & AppID user guide
 
 #####Themes
-> mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes;
+```ruby
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes;
 cd ~/Library/Developer/Xcode/UserData/FontAndColorThemes;
 curl -O http://developers.enormego.com/assets/egotheme/EGOv2.dvtcolortheme
 curl -O https://github.com/akinsella/xcode-railscasts-theme/blob/master/RailsCast_Inspired.dvtcolortheme
 xcode->Perference->Fonts->EGOv2
-
+```
 -----
 #####CocoaPod
 > 升级还是安装都是`sudo gem install cocoapods`
