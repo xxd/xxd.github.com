@@ -18,7 +18,7 @@ https://github.com/CocoaPods/CocoaPods/pull/1329#issuecomment-24203327
 deleting the workspace
 pod install
 Open xcode and accept the option to Update to recommended settings
-![xcode-error](/root/xxd.github.com/images/xcode-error.png)
+[[/root/xxd.github.com/images/xcode-error.png]]
 
 -----
 #####xcode调用OC header
