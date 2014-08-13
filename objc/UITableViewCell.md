@@ -1,4 +1,4 @@
-##### 使用drawRect方法自定义UITableviewCell http://fanliugen.com/?p=33
+### 使用drawRect方法自定义UITableviewCell http://fanliugen.com/?p=33
 这期项目安排比较轻松，今天又遇到一个自定义cell的界面。前段时间看官方例子用drawRect方法自定义，听说这样效率也相当高。不会有什么卡。试着就写了写。
 
 ```Ruby
