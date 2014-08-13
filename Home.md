@@ -1,9 +1,7 @@
 #### Mobile
 - [iOS](iOS/iOS_page)
 - [Objective-C](objc/ObjectiveC_page)
-
-***
-[UITableViewCell] (objc/UITableViewCell)
+    * [UITableViewCell] (objc/UITableViewCell)
 - Swift
 - [xCode](xCode_page)
 
