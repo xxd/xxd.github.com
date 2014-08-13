@@ -1,7 +1,5 @@
 #### Mobile
 - [iOS](iOS/iOS_page)
-    * [UITableViewCell] (objc/UITableViewCell)
-    * [UIGestureRecognizer](objc/UIGestureRecognizer)
     * [UITableViewCell] (iOS/UITableViewCell)
     * [UIGestureRecognizer](iOS/UIGestureRecognizer)
 - [Objective-C](objc/ObjectiveC_page)
