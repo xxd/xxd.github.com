@@ -3,7 +3,7 @@
 - [Objective-C](objc/ObjectiveC_page)
     * [UITableViewCell] (objc/UITableViewCell)
     * [UIGestureRecognizer](objc/UIGestureRecognizer)
-- Swift
+- Swift(swift/swift_page)
 - [xCode](xCode_page)
 
 #### Web
