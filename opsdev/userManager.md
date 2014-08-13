@@ -21,6 +21,7 @@ passwd $USERNAME
 ```
 
 ### 配置文件
+
 /etc/group文件包含所有组 
 /etc/shadow和/etc/passwd系统存在的所有用户名 
 
