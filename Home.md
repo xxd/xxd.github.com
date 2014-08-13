@@ -1,16 +1,16 @@
-#### 移动开发
+#### Mobile
 - [iOS](iOS/iOS_page)
 - Objective-C
 - Swift
 - [xCode](xCode_page)
 
-#### 网页
+#### Web
 
-#### 运维
+#### OpsDev
 
-#### 数据库
+#### Database
 
-#### 大数据
+#### Big Data
 
-#### 其他
+#### others
 - [Gollum](gollum)
