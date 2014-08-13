@@ -1,1 +1,1 @@
-- [Getter&Setter](objc/getter-setter)
+- [Getter&Setter](getter-setter)
