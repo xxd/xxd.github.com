@@ -1,12 +1,12 @@
 给UIImage添加一个新的title属性
-UIImage-Title.h:
+**UIImage-Title.h**
 ```Ruby
 @interface UIImage(Title)
 @property(nonatomic, copy) NSString *title;
 @end
 ```
 
-UIImage-Title.m:
+**UIImage-Title.m**
 ```Ruby
 static char titleKey;
 
@@ -32,7 +32,7 @@ static char titleKey;
 注意不要使用objc_removeAssociatedObjects，因为它用去掉所有的关联的对象。
 关于这段解释，大家可用下面的例子来测试：
 
-main.m
+**main.m**
 ```Ruby
 @interface Foo : NSObject {
     NSString *name_;
