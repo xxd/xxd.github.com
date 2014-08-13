@@ -22,20 +22,21 @@ passwd $USERNAME
 
 ### 配置文件
 
-/etc/group文件包含所有组 
-/etc/shadow和/etc/passwd系统存在的所有用户名 
+- /etc/group文件包含所有组 
+- /etc/shadow和/etc/passwd系统存在的所有用户名 
 
 ### 如何限制用户的最小密码长度
 修改/etc/login.defs里面的PASS_MIN_LEN的值。比如限制用户最小密码长度是8：
-PASS_MIN_LEN 8
+>PASS_MIN_LEN 8
 
 ### 如何使新用户首次登陆后强制修改密码
 `useradd -p '' testuser; chage -d 0 testuser`
 	
 ### 防止任何人使用su 命令成为root
 emacs /etc/pam.d/su，在开头添加下面两行：
-auth sufficient /lib/security/pam_rootok.so
+>auth sufficient /lib/security/pam_rootok.so
 auth required /lib/security/Pam_wheel.so group=wheel
+
 然后把用户添加到"wheel"组：chmod -G10 usernam
 
 ### 设定登录黑名单
