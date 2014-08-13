@@ -4,6 +4,7 @@
     * [UITableViewCell] (objc/UITableViewCell)
     * [UIGestureRecognizer](objc/UIGestureRecognizer)
 - [Swift](swift/swift_page)
+    * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
 
 #### Web
