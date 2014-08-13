@@ -95,7 +95,7 @@ int main (int argc, const char * argv[])
 }
 ```
 
-// Here's the output that this generates:
+>// Here's the output that this generates:
 //
 // 2011-12-03 23:03:10.737 MacTest[3953:707] Created target
 // 2011-12-03 23:03:10.740 MacTest[3953:707] Created payload
