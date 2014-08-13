@@ -95,7 +95,8 @@ int main (int argc, const char * argv[])
 }
 ```
 
->// Here's the output that this generates:
+```
+// Here's the output that this generates:
 //
 // 2011-12-03 23:03:10.737 MacTest[3953:707] Created target
 // 2011-12-03 23:03:10.740 MacTest[3953:707] Created payload
@@ -108,8 +109,9 @@ int main (int argc, const char * argv[])
 // 2011-12-03 23:03:10.750 MacTest[3953:707] Releasing target
 // 2011-12-03 23:03:10.751 MacTest[3953:707] Destroying target
 // 2011-12-03 23:03:10.752 MacTest[3953:707] Destroying second payload
+```
 
-ref:
+Ref:
 - http://fanliugen.com/?p=460
 
 --EOF--
