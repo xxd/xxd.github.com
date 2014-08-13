@@ -8,7 +8,7 @@
 - [xCode](xCode_page)
 
 #### Web
-
+- [muo_rails部署](rails/muo_rails_deploy)
 #### OpsDev
 
 #### Database
