@@ -156,7 +156,7 @@ if ([self.delegate respondsToSelector:@selector(scrollViewDidScroll:)]){
 
 #10秒钟之后给method发消息
 [self performSelector:@selector(stopTimer) withObject:nil afterDelay:10.0];
-```ruby
+```
 
 [Hook Objective-C 的方法](http://www.cnblogs.com/Proteas/archive/2013/01/07/2849697.html)
 下面以对 UIWebView 的 loadRequest: 挂钩子作为例子，来说明如何在 Objective-C 中挂钩子。
