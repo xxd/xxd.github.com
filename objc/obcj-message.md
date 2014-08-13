@@ -10,7 +10,7 @@ objc-message.xcodeproj
 
 ----
 
-Objective-C是动态定型（dynamicaly typed)所以它的类库比C++要容易操作。Objective-C 在运行时可以允许根据字符串名字来访问方法和类，还可以动态连接和添加类。这点没有体会到，有没有对比例子？
+Objective-C是动态定型（dynamicaly typed)所以它的类库比C++要容易操作。Objective-C 在运行时可以允许根据字符串名字来访问方法和类，还可以动态连接和添加类。
 
 `method(或者performSelector:withObject:) -> _cmd -> objc_msgSend -> IMP`
 
