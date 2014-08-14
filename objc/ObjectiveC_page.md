@@ -1,1 +1,0 @@
-- [Getter&Setter](getter-setter)
