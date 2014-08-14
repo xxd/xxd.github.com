@@ -16,7 +16,7 @@
 - [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManage)
 - [Shell Programming Notes](opsdev/shell-Notes)
-- [sed & awk Notes](opsdev/sed_awk_notes)
+- [sed & awk Notes](opsdev/sed-awk-notes)
 
 #### Database
 (Index, Tuning, HA)
