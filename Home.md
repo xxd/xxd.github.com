@@ -15,7 +15,7 @@
 #### OpsDev
 - [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManage)
-- [Shell Programming Notes](opsdev/shellNote)
+- [Shell Programming Notes](opsdev/shellNotes)
 
 #### Database
 (Index, Tuning, HA)
