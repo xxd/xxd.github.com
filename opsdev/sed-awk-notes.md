@@ -1,10 +1,10 @@
-- -F 选项指定分隔符，指定多个分隔符用awk -F '[;:]'
+- -F 选项指定分隔符，指定多个分隔符用`awk -F '[;:]'`
 
 >$ echo '    inet 10.150.160.73/16 brd 10.150.255.255 scope global eth1' |awk -F '[/\ ]' '{print $6}'
 10.150.160.73
 
-### 列出你最常用的10条命令
-这行命令组合得很妙：history输出用户了命令历史；awk统计并输出列表；sort排序；head截出前10行。
+- 列出你最常用的10条命令: 这行命令组合得很妙：history输出用户了命令历史；awk统计并输出列表；sort排序；head截出前10行。
+
 >$ history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 
 ### awk去掉重复记录
