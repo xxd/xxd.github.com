@@ -5,6 +5,7 @@
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class_import)
     * [Objective-C消息简明笔记](objc/obcj_message)
+    * [Getter&Setter](getter-setter)
 - [Swift](swift/swift_page)
     * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
