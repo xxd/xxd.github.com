@@ -1,4 +1,3 @@
-
 1. 安装Package Control：https://sublime.wbond.net/installation
 `ctrl+shift+p`
 2. 安装RailsCasts TextMate theme：https://github.com/tdm00/sublime-theme-railscasts
@@ -9,5 +8,6 @@
 5. emacs模式
 
 ### Ref:
-- quick start:http://jennifermann.ghost.io/a-quick-guide-to-sublime-text/
+- quick start: http://jennifermann.ghost.io/a-quick-guide-to-sublime-text/
 - http://www.keakon.net/2012/09/17/SublimeText2使用技巧
+- http://lucifr.com/tags/sublime-text/ （图标，主题推荐：Flatland，插件：PlainTasks）
