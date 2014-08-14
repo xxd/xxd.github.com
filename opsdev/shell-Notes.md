@@ -1,3 +1,12 @@
+### 时间
+```Ruby
+date "+%Y_%m_%d %H:%M:%S"    
+2013_02_19 13:14:58  
+
+date -d tomorrow
+DATE_TIME=`date -d'1 hour ago' +%Y-%m-%d-%H`
+```
+
 ### 判断
 ```Ruby
 [ -f "somefile" ] ：判断是否是一个文件 
