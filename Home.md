@@ -13,9 +13,12 @@
 - [muo_rails部署](rails/muo-rails-deploy)
 
 #### OpsDev
+- [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManage)
+- [Shell Programming Notes](opsdev/shellNotes)
 
 #### Database
+(Index, Tuning, HA)
 - [PostgreSQL](pgsql/pgsql_page)
 
 #### Big Data
