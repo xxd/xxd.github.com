@@ -26,4 +26,5 @@
 
 #### others
 - [Gollum](gollum)
+- http://wiki.junnan.org
 - [Sublime Text 3](others/SublimeText3)
