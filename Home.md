@@ -15,7 +15,7 @@
 #### OpsDev
 - [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManage)
-- [Shell Programming Notes](opsdev/shell_Notes)
+- [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed_awk_notes)
 
 #### Database
