@@ -25,3 +25,4 @@
 
 #### others
 - [Gollum](gollum)
+- [Sublime Text 3](others/SublimeText3)
