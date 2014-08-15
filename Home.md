@@ -5,7 +5,6 @@
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class_import)
     * [Objective-C消息简明笔记](objc/obcj_message)
-    * [Getter与Setter](getter-setter)
     * [Getter与Setter](objc/getter-setter)
     * [常量与变量](objc/const-var)
 - [Swift](swift/swift_page)
