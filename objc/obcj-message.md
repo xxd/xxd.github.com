@@ -7,6 +7,7 @@ objc-message.xcodeproj
 2. [Objective-C Message](http://www.cnblogs.com/studentdeng/archive/2011/10/06/2199873.html)
 3. [Objective-C的消息传递机制 by Keakon](http://www.keakon.net/2011/08/10/Objective-C的消息传递机制)
 4. [NSInvocation简单使用 « akwei的开发笔记](http://www.dev3g.com/?p=36)
+5. [ObjC:调用有多个参数的selector](http://fanliugen.com/?p=445)
 
 ----
 
