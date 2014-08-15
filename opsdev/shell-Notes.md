@@ -145,4 +145,89 @@ for i in stringchar {1..10}
 awk 'BEGIN{for(i=1; i<=10; i++) print i}'
 ```
 
+
+```ruby
+shell
+
+while read -r line
+do
+    echo $line
+done < hosts
+
+#!/bin/bash
+# we have less than 3 arguments. Print the help text:
+if [ $# -lt 3 ]; then
+cat<<HELP
+     ren -- renames a number of files using sed regular expressions
+
+     USAGE: ren 'regexp' 'replacement' files
+     EXAMPLE: rename all *.HTM files in *.html:
+     ren 'HTM$' 'html' *.HTM
+
+HELP
+     exit 0
+fi
+OLD="$1"
+NEW="$2"
+# The shift command removes one argument from the list of
+# command line arguments.
+shift
+shift
+# $* contains now all the files:
+for file in $*; do
+if [ -f "$file" ]; then
+    newfile=`echo "$file" | sed  "s/${OLD}/${NEW}/g"`
+        if [ -f "$newfile" ]; then
+            echo "ERROR: $newfile exists already"
+        else
+            echo "renaming $file to $newfile "
+            mv "$file" "$newfile"
+        fi
+fi
+done
+
+
+!/bin/bash
+while IFS= read -r file
+do
+        [ -f "$file" ] 
+done < "test2"
+
+#!/bin/bash
+f="va.20140708-1829.log"
+arr=(${f//./ }) 
+for i in ${arr[@]}
+do
+    echo $i
+done
+
+#!/bin/bash
+file=$1
+cat $file | while read line
+do
+	filename=`echo $file | cut -c 1-5`
+	tar -zcvfP /Users/xxd/lab/test/$filename.tar.gz /Users/xxd/lab/test/$filename
+done
+
+
+cat $SLAVES | while read slave
+do
+  echo "===================$slave================="
+  scp -r $SRC $slave:$DEST
+done
+exit 0
+
+#common
+if [ $COMMAND == "common" ];then
+  cat $SLAVES | while read slave
+  do
+    ssh $slave << EOF
+      echo "==================$slave======================"
+      eval $@
+      exit
+EOF
+  done
+  exit 0
+fi
+```
 --EOF--
