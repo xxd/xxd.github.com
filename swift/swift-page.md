@@ -1,6 +1,5 @@
-
 swift站点：
-   * https://swift.zeef.com/robin.eggenkamp
+   * [资料汇总](https://swift.zeef.com/robin.eggenkamp)
    * https://github.com/nettlep/learn-swift playground学习
    * http://www.swiftcast.tv/articles?utm_medium=referral&utm_source=swift.zeef.com%2Frobin.eggenkamp&utm_campaign=ZEEF
 
