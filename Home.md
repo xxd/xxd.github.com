@@ -10,6 +10,7 @@
 - [Swift](swift/swift_page)
     * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
+- [Android](Android-page)
 
 #### Web
 - [muo_rails部署](rails/muo-rails-deploy)
