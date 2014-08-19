@@ -21,7 +21,7 @@
 
 #### OpsDev
 - [监控调优](opsdev/monitorTuning)
-- [用户管理](opsdev/userManage)
+- [用户管理](opsdev/userManager)
 - [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed-awk-notes)
 ```ruby
