@@ -7,7 +7,7 @@
     * [Objective-C消息简明笔记](objc/obcj-message)
     * [Getter与Setter](objc/getter-setter)
     * [常量与变量](objc/const-var)
-- [Swift](swift/swift_page)
+- [Swift](swift/swift-page)
     * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
 - [Android](Android-page)
