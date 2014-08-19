@@ -14,6 +14,7 @@
 
 #### Web
 - [muo_rails部署](rails/muo-rails-deploy)
+- [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
 
 #### OpsDev
 - [监控调优](opsdev/monitorTuning)
