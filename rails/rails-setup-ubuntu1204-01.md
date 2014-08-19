@@ -102,3 +102,139 @@ chmod 775 -R /prod
 passwd $USERNAME
 visudo
 ```
+
+####RVM & Ruby 1.9.3 & Ruby 2.0.0 https://ruby-china.org/wiki/rvm-guide
+-----------------
+	$ su -l root
+	$ curl -L https://get.rvm.io | bash -s stable --ruby
+
+	但是如果是部署使用deploy_user用户安装，然后使用source使配置生效
+	deploy_user@ubuntu:~$ curl -L https://get.rvm.io | bash -s stable --ruby
+	deploy_user@ubuntu:/prod/dev$ source /home/deploy_user/.rvm/scripts/rvm
+	deploy_user@ubuntu:/prod/dev$ gem install rails
+	
+#####用RVM升级Ruby到1.9.3
+	$ rvm get latest
+	$ rvm reload
+	$ rvm get stable
+	$ rvm install 1.9.3
+	$ rvm use 1.9.3 --default
+	
+	# 如果发现在执行bundle exec rails c时报错:
+	# cannot load such file — readline (LoadError)
+	 
+	sudo apt-get install libreadline6-dev
+	cd ext/readline
+	ruby extconf.rb
+	make
+	sudo make install
+	
+#####用RVM升级Ruby到2.0.0，并且升级Rails
+	$ gem install rails --version '~> 3.2.0'
+	$ rvm pkg install openssl
+	$ rvm get head
+	$ rvm install 2.0.0
+	$ rvm use ruby-2.0.0-p0 --default
+	$ gem update rails 
+	$ gem update --system
+	$ gem update rails bundler
+	
+	$ ruby -v
+	ruby 2.0.0p0 (2013-02-24 revision 39474) [x86_64-darwin12.2.0]
+	$ gem -v
+	2.0.0
+
+	xuexd@ubuntu:~$ gem install bundler rails
+	xuexd@ubuntu:~$ gem -v
+	2.0.0.rc.2
+		
+
+####Rails 3.1
+---------
+    $ mkdir dev     
+    $ git clone git@github.com:vvdpzz/thunderbolt.git
+    $ emacs Gemfile
+    注释掉 #SystemTimer
+    Rails '3.1.0'
+    Rake '0.9.2'
+    gem 'execjs'
+    gem 'therubyracer'
+    上边两个Gem解决:`autodetect': Could not find a JavaScript runtime
+    如果解决不了：
+    $ sudo apt-get install nodejs
+
+Pruction部署配置
+
+     $ rm Gemfile.lock
+     $ gem install rails
+     $ bundle install
+     $ rake db:create RAILS_ENV=production
+     $ rake db:migrate RAILS_ENV=production
+     $ rake db:seed RAILS_ENV=production
+     $ emacs config/environments/production.rb
+
+     预编译active_admin的js,css文件
+     	config.assets.precompile += %w( active_admin.css active_admin.js ) 
+
+     预编译其他js,css文件,修改以下两个参数为true
+     # Disable Rails's static asset server (Apache or nginx will already do this)
+     	config.serve_static_assets = true
+
+     # Compress JavaScripts and CSS
+     	config.assets.compress = true
+
+     # Don't fallback to assets pipeline if a precompiled asset is missed
+     	config.assets.compile = true
+     # config.assets.js_compressor = :yui # 这个导致Muo_Rails不能运行所以注释掉了
+
+[关于文件压缩](http://guides.rubyonrails.org/asset_pipeline.html#javascript-compression)
+
+时区改为北京
+
+	修改config/application.rb，增加下边一行
+	config.active_record.default_timezone = :local
+
+解决方法:in `require': no such file to load -- openssl
+
+     $ sudo apt-get install libopenssl-ruby1.9 libssl-dev
+     $ cd ~/ruby-1.9.2-p290/ext/openssl
+     $ ruby extconf.rb && make && sudo make install
+
+解决方法:An error occured while installing rmagick (2.13.1), and Bundler cannot continue.
+ ** [out :: 74.207.224.81] Make sure that `gem install rmagick -v '2.13.1'` succeeds before bundling.  
+ 
+	$ apt-get install imagemagick libmagickwand-dev
+
+解决方法:ndefined method `exitstatus' for nil:NilClass
+(in /prod/dev/magic/releases/20111220083725/app/assets/javascripts/active_admin.js)  
+
+	$ apt-get install openjdk-6-jre-headless
+
+Rakefile
+
+	 $ emacs Rakefile
+	 添加rake命令用来启动压缩 (这部分将会合并到capistrano)
+        namespace :custom do 
+          desc "Restart unicorn & rails services"
+          task :restarts do
+            puts "Refresh the assets..."
+            %x[rake assets:clean && rake assets:precompile]
+            puts "Restarting unicorn..."
+            %x[/etc/init.d/unicorn_init restart]
+            puts "Restarting nginx..."
+            %x[sudo /etc/init.d/nginx restart]
+          end
+          
+          desc "Stop unicorn & rails services"
+          task :stops do
+            puts "Stop unicorn..."
+            %x[/etc/init.d/unicorn_init stop]
+            puts "Stop nginx..."
+            %x[sudo /etc/init.d/nginx stop]
+          end
+        end
+     $ ruby extconf.rb
+     $ sudo make && sudo make install
+     重新 $ sudo gem install rails
+     $ PATH=/usr/local/ruby/bin:$PATH
+     $ export PATH
