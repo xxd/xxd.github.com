@@ -13,7 +13,7 @@
 - [Android](Android-page)
 
 #### Web
-- [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-04)
+- [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-05)
 - [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
 - [muo_rails部署](rails/muo-rails-deploy)
 - [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
