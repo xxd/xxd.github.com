@@ -1,4 +1,4 @@
-## MySQL Redis MongoDB Ruby Rails Unicorn Nginx MySQL@Ubuntu10.04
+## Ubuntu10.04: MySQL Redis MongoDB ROR Nginx
 * MySQL Community Server 5.5.15
 * Redis 2.4.2
 * rvm+Ruby 1.9.2-p290
