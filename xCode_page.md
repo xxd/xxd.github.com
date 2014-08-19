@@ -1,5 +1,6 @@
 ### Ref
 - [使用Xcode和Instruments调试解决iOS内存泄露](http://blog.csdn.net/totogo2010/article/details/8233565)
+- [xCode5：资源管理，Asset Catalog和Image Slicing](http://onevcat.com/2013/06/new-in-xcode5-and-objc/)
 
 ### Themes
 ```ruby
