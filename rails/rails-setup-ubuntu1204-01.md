@@ -533,3 +533,196 @@ Replica set配置
 生成migration出现`error  mongoid [not found]`,需要明确指定所使用的ORM
 
 	$ rails g migration AddLockedToUsers -o active_record
+	
+####MySQL Community Server 5.5.15
+-----------------------------
+[官方文档](http://dev.mysql.com/doc/refman/5.6/en/installing-source-distribution.html)
+
+安装之前使用cmake编译MySQL5.5.15
+
+     $ wget http://www.cmake.org/files/v2.8/cmake-2.8.5.tar.gz
+     $ tar -zxvf cmake-2.8.5.tar.gz
+     $ cd  cmake-2.8.5
+     $ ./configure
+     $ sudo make && sudo make install
+ 
+使用ncurses库编译安装MySQL
+
+     $ wget http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.9.tar.gz
+     $ tar -zxvf ncurses-5.9.tar.gz
+     $ cd ncurses-5.9
+     $ ./configure
+     $ sudo make && sudo make install
+ 
+编译安装MySQL
+
+     $ groupadd mysql
+     $ useradd -r -g mysql mysql
+ 
+     $ wget http://download.softagency.net/mysql/Downloads/MySQL-5.5/mysql-5.5.18.tar.gz
+	#5.6
+     $ wget http://download.softagency.net/mysql/Downloads/MySQL-5.6/mysql-5.6.3-m6.tar.gz
+     $ tar -zxvf mysql-5.5.15.tar.gz
+     $ cd mysql-5.5.15
+     $ sudo cmake .
+     也可定制
+     $ sudo cmake -DCMAKE_INSTALL_PREFIX=/mysql -DMYSQL_UNIX_ADDR=/var/run/mysqld/mysql.sock -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_EXTRA_CHARSETS:STRING=utf8,gbk -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1 -DWITH_READLINE=1 -DENABLED_LOCAL_INFILE=1 -DMYSQL_DATADIR=/mysql/data -DMYSQL_USER=mysql
+     $ sudo make && sudo make install
+
+配置MySQL
+
+     $ cd /mysql
+     $ chown -R mysql .
+     $ chgrp -R mysql .
+     $ ./scripts/mysql_install_db --basedir=/mysql --datadir=/mysql/data/ --user=mysql
+     #mysql_install_db出现FATAL ERROR: Could not find mysqld错误解决，
+     是因为安装时/etc/mysql文件夹下有个配置文件my.cnf，而在安装时运行了cp support-files/my-medium.cnf /etc/my.cnf，造成这个，解决方法:
+	$ mv  /etc/mysql/my.cnf   /etc/mysql/my.cnf.bak
+	$ cp  support-files/my-medium.cnf   /etc/my.cnf
+
+     $ chown -R root .
+     $ chown -R mysql:mysql data
+     $ cp support-files/my-medium.cnf /etc/my.cnf
+     $ bin/mysqld_safe --user=mysql &
+     $ cp support-files/mysql.server /etc/init.d/mysql.server
+ 
+设置开机启动mysql服务
+
+     $ ln -s /etc/init.d/mysql.server /etc/rc2.d/S99mysql
+     $ ln -s /etc/init.d/mysql.server /etc/rc0.d/K01mysql
+     $ ln -s /etc/init.d/mysql.server /etc/rc3.d/S99mysql //redhat
+ 
+将mysql安装目录加入环境变量，在/etc/profile文件末尾中加入以下命令
+
+     $ PATH=/mysql/bin:$PATH
+     $ export PATH
+
+设置MySQL root
+
+     $ mysql -u root
+     mysql> set password for root@localhost =password('pw1234567!');
+     mysql> flush privileges;
+     mysql> quit;
+     $ mysql -u root -p
+
+####UTF-8编码方式
+设置MYSQL的UTF-8编码方式(mysql-5.5.15):
+
+     修改/etc/mysql/my.cnf添加如下内容
+     [mysql]
+     default-character-set = utf8
+     
+     [mysqld]
+     default-character-set = utf8
+     init_connect = 'SET NAMES utf8'
+
+     [client]
+     default-character-set = utf8
+设置MYSQL的UTF-8编码方式(mysql-5.5.16)
+
+	修改/etc/mysql/my.cnf添加如下内容
+	[mysqld]
+	character_set_server = utf8
+	init_connect = 'SET NAMES utf8'
+如果还有问题那么需要配置外部的SQL文件，直接写在SQL文件的最前面：
+
+	SET NAMES ‘utf8′;
+它相当于下面的三句指令：
+
+	SET character_set_client = utf8;
+	SET character_set_results = utf8;
+	SET character_set_connection = utf8;
+
+运行：`sudo /etc/init.d/mysql.server restart`
+检查；`sudo netstat -tap | grep mysql`
+
+检查MYSQL查看编码，数据库编码应该已经全改成utf8
+MYSQL命令: `show variables like'character%'; `
+
+####MySQL5.5 Deb包
+----
+	
+	$ dpkg -i mysql-MVER-DVER-CPU.deb
+	The Debian package installs files in the /opt/mysql/server-5.5 directory.
+	
+	mkdir /opt/mysql/server-5.5/data/
+	mkdir /opt/mysql/server-5.5/log/
+	mkdir /opt/mysql/server-5.5/errorlog/
+	mkdir /opt/mysql/server-5.5/slowlog/
+	
+	chown mysql:mysql -R /opt/mysql/server-5.5/data/
+	…
+	…
+	…
+	
+	sudo scripts/mysql_install_db --basedir=/opt/mysql/server-5.5/  --datadir=/opt/mysql/server-5.5/data/ --user=mysql
+
+	$ cd /opt/mysql/server-5.5
+	$ chown -R root .
+	$ chown -R mysql:mysql data
+	…
+	…
+	…
+	$ cp support-files/my-medium.cnf /etc/my.cnf
+	$ bin/mysqld_safe --user=mysql &
+	$ cp support-files/mysql.server /etc/init.d/mysql.server
+	$ sudo ln -s /etc/init.d/mysql.server /etc/rc2.d/S99mysql
+	$ sudo ln -s /etc/init.d/mysql.server /etc/rc0.d/K01mysql
+	
+
+####mariadb 5.5.28a
+--------------
+
+安装mariadb和安装官方版本和percona的方法基本一致：
+下载相关软件源码包
+
+	wget http://downloads.mariadb.org/f/mariadb-5.5.28a/kvm-tarbake-jaunty-x86/mariadb-5.5.28a.tar.gz/from/http:/ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb
+	sudo mv mariadb mariadb-5.5.28a.tar.gz
+	wget http://www.cmake.org/files/v2.8/cmake-2.8.5.tar.gz
+
+安装cmake，mysql-5.5后需要使用cmake配置
+
+	sudo tar zxf cmake-2.8.5.tar.gz
+	cd cmake-2.8.5
+	sudo ./bootstrap
+	sudo make
+	sudo make install
+	cd ..
+
+配置编译器，提高性能
+
+	sudo CFLAGS="-O3"
+	sudo CXX=gcc
+	sudo CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti"
+
+mysql-5.1版本使用以下编译参数，5.5以前添加以下参数增加性能
+
+	./configure –prefix=/usr/local/mysql –enable-assembler –with-mysqld-ldflags=-all-static
+
+开始安装mariadb
+
+	yum install ncurses-devel -y
+	yum install libaio-devel -y
+	
+	sudo apt-get install libaio-dev
+	sudo apt-get install ncurses-dev
+	
+	sudo useradd mysql
+	sudo tar -zxvf mariadb-5.5.28a.tar.gz
+	cd mariadb-5.5.28a
+	sudo cmake . -LH|more //CMake下查看MySQL的编译配置
+
+	sudo cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mariadb-5.5.28a -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_FEDERATED_STORAGE_ENGINE=1  -DENABLED_LOCAL_INFILE=1 -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci   -DWITH_DEBUG=0 -DBUILD_CONFIG=mysql_release -DFEATURE_SET=community -DWITH_EMBEDDED_SERVER=OFF
+
+	sudo make -j 8      //-j指定用于编译的CPU核数，可以加快编译速度
+	sudo make install
+	sudo cp support-files/my-innodb-heavy-4G.cnf /etc/my.cnf	
+	sudo /usr/local/mariadb-5.5.28a/scripts/mysql_install_db --basedir=/usr/local/mariadb-5.5.28a/  --datadir=/usr/local/mariadb-5.5.28a/data/ --user=mysql
+	
+	sudo /usr/local/mariadb-5.5.28a/bin/mysqld_safe --user=mysql &
+	
+	$ sudo mkdir /usr/share/mysql
+	$ sudo cp /usr/local/mariadb-5.5.28a/share/english/errmsg.sys /usr/share/mysql/errmsg.sys
+	$ sudo mkdir /var/lib/mysql/
+	$ sudo touch /var/lib/mysql/dba.err
+	$ sudo chown mysql:mysql /var/lib/mysql/dba.err
