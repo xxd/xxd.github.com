@@ -783,3 +783,287 @@ root@localhost ~]# cat /etc/rc.local
 	export PATH
 	unset USERNAME
 
+####Redis-2.6.7
+-----------
+     $ sudo wget http://redis.googlecode.com/files/redis-2.6.7.tar.gz
+     $ sudo tar zxvf redis-2.6.7.tar.gz
+     $ sudo make
+     $ sudo apt-get install tcl8.5
+     $ sudo make test
+     Testing Redis version redis-2.6.7 (00000000)
+     831 tests, 831 passed, 0 failed     
+
+     修改redis.conf，修改
+     daemonize yes
+     logfile /tmp/redis.log
+     dir /redis/data
+
+错误 zmalloc.h:50:31: 致命错误： jemalloc/jemalloc.h：没有那个文件或目录
+
+	xuexd@dba:/usr/local/redis-2.6.7$ sudo make distclean
+
+添加redis用户
+
+	 $ cp redis-server /usr/bin/
+	 $ cp redis-cli /usr/bin/
+     $ groupadd redis
+     $ useradd -r -g redis redis 
+修改权限
+
+	 $ mkdir -p /redis/data
+     $ chown -R root:root /redis
+     $ chown -R redis:redis /redis/data
+     $ 这里写了个Redis自动启动脚本 /etc/init.d/redis
+     $ chmod 755 /etc/init.d/redis
+     $ ln -s /etc/init.d/redis /etc/rc2.d/S99redis
+     $ redis-cli -p 6000
+     
+/etc/init.d/redis
+
+```ruby
+#! /bin/sh                             
+# 只要修改DAEMON_ARGS和PIDFILE这两个参数就可以了，然后把文件存成 redis_master|slave_port.sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+DAEMON=`which redis-server`
+REDIS_CLI=`which redis-cli`
+NAME=redis-server
+DESC=redis-server                                                                        
+DAEMON_ARGS=/opt/redis/redis_master_6000.conf
+PIDFILE=/var/run/redis_master_6000.pid
+
+test -x $DAEMON || exit 0
+test -x $DAEMONBOOTSTRAP || exit 0
+
+set -e
+
+case "$1" in
+  start)
+    echo -n "Starting $DESC: "
+    touch $PIDFILE                                                                                                                                             
+    chown redis:redis $PIDFILE
+    if start-stop-daemon --start --quiet --umask 007 --pidfile $PIDFILE --chuid redis:redis --exec $DAEMON -- $DAEMON_ARGS
+    then
+        echo "$NAME."
+    else
+        echo "failed"
+    fi
+    ;;
+  stop)
+  echo -n "Stopping $DESC: "
+  if start-stop-daemon --stop --retry 10 --quiet --oknodo --pidfile $PIDFILE --exec $DAEMON
+      then
+      echo "$NAME."
+      else
+      echo "failed"
+      fi
+  rm -f $PIDFILE
+  ;;
+
+  restart|force-reload)
+    ${0} stop
+    ${0} start
+    ;;
+  *)
+    echo "Usage: /etc/init.d/$NAME {start|stop|restart|force-reload}" >&2
+    exit 1
+;;
+esac
+
+exit 0
+```
+
+主从
+	$ cp /etc/redis.conf /etc/redis_slave.conf
+	$ emacs /etc/redis_slave.conf
+		port 6380
+		pidfile /var/run/redis_slave.pid
+		logfile /tmp/redis_slave.log
+		dir /redis/data_slave/
+		dbfilename dump_slave.rdb
+		slaveof 106.187.43.141 6379
+		
+	$ sudo scp redis_slave.conf root@202.85.221.32:/redis/redis_slave.conf
+	$ /redis/bin/redis-server /redis/redis_slave.conf
+	
+	进入数据目录，查一下数据文件的散列：
+	$ ls /redis/data_slave/
+	temp-1330583768.14827.rdb
+	同步完成后文件名自动变为dump_slave.rdb
+	$ ls /redis/data_slave/
+	dump_slave.rdb
+	
+####memcached
+---------
+<pre>
+wget https://github.com/downloads/libevent/libevent/libevent-2.0.19-stable.tar.gz
+tar zxvf libevent-2.0.19-stable.tar.gz 
+cd libevent-2.0.19-stable
+./configure 
+make
+make install
+
+wget http://memcached.googlecode.com/files/memcached-1.4.13.tar.gz
+tar zxvf memcached-1.4.13.tar.gz 
+cd memcached-1.4.13
+./configure --prefix=/opt/memcached
+make && ldconfig && make test
+make install
+  
+root@gandalf:/opt/memcached# groupadd  memcached 
+root@gandalf:/opt/memcached# useradd -r -g memcached  memcached
+root@gandalf:/opt/memcached# touch /var/log/memcached.log && chown memcached:memcached /var/log/memcached.log 
+root@gandalf:/opt/memcached# /opt/memcached/bin/memcached -u memcached -d -m 1024m -l 0.0.0.0 -p 11211   -v 2>>/var/log/memcached.log
+root@gandalf:/opt/memcached# ps aux|grep mem
+998       9252  0.0  0.0 126460  1112 ?        Ssl  11:42   0:00 /opt/memcached/bin/memcached -u memcached -d -m 1024m -l 0.0.0.0 -p 11211 -v
+root      9259  0.0  0.0   8880   788 pts/1    S+   11:42   0:00 grep --color=auto mem
+</pre>
+
+####Xen-Ubuntu-server
+-----------------
+  	#安装ython-software-properties
+	$ sudo apt-get install python-software-properties
+	#添加ppa源
+	$ sudo add-apt-repository ppa:ukplc-team/xen-stable
+    $ Sudo apt-get update
+	$ sudo apt-get install ubuntu-xen-server
+
+####Recommendify
+------------
+OS X
+
+	brew install hiredis
+		
+Linux:(**采用源码安装**)
+
+	git clone https://github.com/antirez/hiredis.git && cd hiredis && make && sudo make install && sudo ldconfig
+
+####rmagick
+-------
+出现错误:(OS x) 
+
+	ld: library not found for -lgomp
+解决方案:[Mac Rmagick wont install with Xcode 4.2](http://stackoverflow.com/questions/7961091/mac-rmagick-wont-install-with-xcode-4-2)
+
+####Munin
+------
+* 在监控服务器上安装Munin Master:
+	
+		apt-get install munin
+* 在监控节点安装Munin-node
+	
+		apt-get install  munin-node
+* 根据不同服务器上的应用，安装Munin的redis、mysql、unicorn、nginx等的监控插件
+
+		# Perl类库
+   		$ sudo cpan
+   		> install Redis
+   		> install IPC::ShareLite
+   		> install Cache::Cache
+   		> install Cache::Memcached
+   	
+  		 # Python类库
+   		$ sudo apt-get install python-pip 
+    	$ sudo pip install pymongo sphinxsearch
+
+1. redis
+
+```   
+   $ cd /usr/share/munin/plugins
+   $ sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/redis/redis_ && sudo chmod +x redis_
+   $ bash
+   $  for i in connected_clients per_sec keys_per_sec used_keys used_memory; do
+        sudo ln -s /usr/share/munin/plugins/redis_ /etc/munin/plugins/redis_127.0.0.1_6379_${i}__redis_master
+   done  
+2. redis-speed
+   $ sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/redis/redis-speed && sudo chmod +x redis-speed
+   $ sudo ln -s /usr/share/munin/plugins/redis-speed /etc/munin/plugins/redis-speed_127.0.0.1_6379__redis_master
+3. resque
+```
+* memcached
+
+```
+	# memcached 缓存大小、连接数量、命中率、对象数量、请求数量、网络流量
+   $ for i in bytes_ connections_ hits_ items_ requests_ traffic_; do
+	 	sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/memcached/memcached_${i} && sudo chmod +x memcached_${i}
+		sudo ln -s /usr/share/munin/plugins/memcached_${i} /etc/munin/plugins/memcached_${i}127_0_0_1_11211
+	done
+```
+* mongodb
+
+ ```  
+   for i in btree conn lock mem ops;do sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/mongodb/mongo_${i} && sudo chmod +x mongo_${i}; 
+   		sudo ln -s /usr/share/munin/plugins/mongo_${i} /etc/munin/plugins/mongo_${i}
+   done
+```   
+* mysql
+
+```
+   $ vim /etc/munin/plugin-conf.d/munin-node
+	增加
+	[mysql_*]
+		env.mysqluser admin
+		env.mysqlpassword $ngrserver$   
+	
+	for i in connections bin_relay_log commands files_tables innodb_bpool innodb_bpool_act innodb_insert_buf innodb_io innodb_io_pend innodb_rows innodb_semaphores innodb_tnx innodb_tnx network_traffic qcache qcache_mem select_types slow sorts table_locks tmp_tables;do
+		sudo ln -s /usr/share/munin/plugins/mysql_ /etc/munin/plugins/mysql_${i}
+	done
+```	
+* Sphinx
+ 
+```
+	$ sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/sphinx/sphindex_ && sudo chmod +x sphindex_
+	$ 
+```
+
+* Unicorn
+
+```
+	$ sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/unicorn/unicorn_memory_status && sudo chmod +x unicorn_memory_status
+	# 修改rails_root
+	 sudo ln -s /usr/share/munin/plugins/unicorn_memory_status  /etc/munin/plugins/unicorn_memory_status
+	 
+	 $ sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/unicorn/unicorn_status && sudo chmod +x unicorn_status
+	 # 修改rails_root
+	 $ sudo ln -s /usr/share/munin/plugins/unicorn_status /etc/munin/plugins/unicorn_statu
+```
+* Nginx
+
+```
+Nginx-Memory:
+	sudo wget https://raw.github.com/lvexiao/contrib/master/plugins/nginx/nginx_memory && sudo chmod +x nginx_memory
+	sudo ln -s /usr/share/munin/plugins/nginx_memory /etc/munin/plugins/ 
+	sudo ln -s /usr/share/munin/plugins/nginx_status /etc/munin/plugins/
+```
+
+* 重启Munin节点
+
+   		$ sudo service munin-node restart   	
+   
+####其他
+----
+关闭SELINUX
+修改 /etc/selinux/config 将SELINUX=enforcing 改成SELINUX=disabled  需要重启
+
+关于/etc/init.d下的脚本的另一种管理方法
+统一建立在config/下例如
+
+	$ chmod +x config/unicorn_init.sh
+	$ sudo ln -s /prod/dev/magic/current/config/unicorn_init.sh /etc/init.d/unicorn
+	$ sudo service unicorn restart
+
+####维护页
+------
+部署的时候,如果 #{shared_path}/system/maintenance.html 存在，则rewrite至维护页面
+
+如果维护结束的时候 需要删除这个文件 
+
+	$ rm -f #{shared_path}/system/maintenance.html  
+
+####Mysql主从
+---------
+设置Mysql 从服务器跳过错误的SQL语句  
+
+	SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1;
+
+--EOF--
