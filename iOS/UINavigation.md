@@ -1,7 +1,11 @@
-//宏
+- 宏
+```ruby
 #define BARBUTTON(name, selector) [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:selector]
 self.navigationItem.leftBarButtonItem = BARBUTTON(@"Action", @selector(sendMail:));
+```
 
+//Navi右侧放置两个按钮
+self.navigationItem.leftBarButtonItem = [[NSMutableArray alloc] initWithObjects:												[[UIBarButtonItem alloc] initWithTitle:@"Email" style:UIBarButtonItemStyleBordered target:self action:@selector(sendMail:)], [[UIBarButtonItem alloc] initWithTitle:@"SMS" style:UIBarButtonItemStyleBordered target:self action:@selector(sendSMS:)],nil];
 
 
 
