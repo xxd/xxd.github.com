@@ -4,6 +4,7 @@
     * [UITableViewCell] (iOS/UITableViewCell)
     * [UIGestureRecognizer](iOS/UIGestureRecognizer)
     * [UIButton](iOS/UIButton)
+    * [NSFileManager] (iOS/NSFileManager)
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class-import)
     * [Objective-C消息简明笔记](objc/obcj-message)
