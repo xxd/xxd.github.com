@@ -1,3 +1,10 @@
+//宏
+#define BARBUTTON(name, selector) [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:selector]
+self.navigationItem.leftBarButtonItem = BARBUTTON(@"Action", @selector(sendMail:));
+
+
+
+
 1. BarButtonItems with NSArray **ViewDeckExample.xcodeproj**
 self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects.......... 
 
