@@ -1,4 +1,3 @@
-
 ### 参考：
 - 日常维护
     - http://www.zlovezl.cn/articles/15-advanced-postgresql-commands-with-examples/
@@ -205,4 +204,16 @@ SELECT crypt ( 'sathiya', gen_salt('md5') );
 - 清除旧表: `truncate table t_play_quality_day_old;` 
 - 回收物理空间: `VACUUM  t_play_quality_day_old;`
 
+### 主从
+> 变更参数如下：
+> 配置文件添加：
+> wal_level = hot_standby
+> synchronous_commit = local
+> max_wal_senders = 3
+
+> 数据同步用户添加：
+> ruser
+
+> 访问权限文件添加：
+> host   replication     ruser     ip/32		md5
 --EOF--
