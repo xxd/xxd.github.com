@@ -205,7 +205,7 @@ SELECT crypt ( 'sathiya', gen_salt('md5') );
 - 回收物理空间: `VACUUM  t_play_quality_day_old;`
 
 ### 主从
-
+```
 配置文件添加：
 wal_level = hot_standby
 synchronous_commit = local
@@ -216,4 +216,6 @@ ruser
 
 访问权限文件添加：
 host   replication     ruser     ip/32		md5
+```
+
 --EOF--
