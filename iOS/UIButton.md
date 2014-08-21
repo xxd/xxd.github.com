@@ -1,5 +1,5 @@
 1. BarButtonItems with NSArray **ViewDeckExample.xcodeproj**
-`self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects.......... `
+>self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects.......... 
 
 //2. UIButton with navigationItem TableSearch.xcodeproj 
 UIButton *btnCustom = [UIButton buttonWithType:UIButtonTypeRoundedRect];
