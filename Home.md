@@ -1,3 +1,5 @@
+http://www.cnblogs.com/buro79xxd/
+
 #### Mobile
 - [iOS](iOS/iOS_page)
     * [UINavigation] (iOS/UINavigation)
@@ -29,6 +31,7 @@
 - [用户管理](opsdev/userManager)
 - [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed-awk-notes)
+- https://github.com/Gazler/githug
 ```ruby
 python -m SimpleHTTPServer [port]
 python -m http.server [port]
