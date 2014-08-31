@@ -9,6 +9,7 @@ $ rvm gemset list
 ```
 
 ###Rails项目
+```
 $ mkdir rails_projects
 $ cd rails_projects
 $ rails new first_app
@@ -16,10 +17,13 @@ $ rails new first_app
 $ bundle update
 $ bundle install
 $ rails server
-
-$ git init
-修改.gitignore 文件
 ```
+
+###Git
+```
+$ git init
+
+修改.gitignore 文件
 # Ignore bundler config.
 /.bundle
 
@@ -40,10 +44,7 @@ doc/
 .DS_Store
 .idea
 .secret
-```
 
-###Git
-```
 $ git add .
 $ git status
 $ git commit -m "Initial commit"
