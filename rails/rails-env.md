@@ -1,14 +1,14 @@
-
+###环境
+```
 $ rvm list known
-
 $ rvm install 2.1.2
 $ rvm use 2.1.2 --default
 $ rvm gemset create rails4
 $ rvm use 2.1.2@rails4 --default
 $ rvm gemset list
+```
 
-----
-
+###Rails项目
 $ mkdir rails_projects
 $ cd rails_projects
 $ rails new first_app
@@ -42,6 +42,8 @@ doc/
 .secret
 ```
 
+###Git
+```
 $ git add .
 $ git status
 $ git commit -m "Initial commit"
@@ -50,3 +52,4 @@ $ git remote add origin git@github.com:<username>/first_app.git
 $ git push -u origin master
 $ git checkout -b modify-README
 $ git branch
+```
