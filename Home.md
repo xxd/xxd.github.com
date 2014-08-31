@@ -18,7 +18,7 @@ http://www.cnblogs.com/buro79xxd/
 - [xCode](xCode_page)
 - [Android](Android-page)
 
-#### Web
+#### Ruby and Rails
 - [Rails环境部署](rails/rails-env)
 - [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-06)
 - [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
@@ -27,16 +27,19 @@ http://www.cnblogs.com/buro79xxd/
 - [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
 - [Ruby Programming Notes](ruby/ruby-notes)
 
+#### Python
+- [深入 Python 3](http://sebug.net/paper/books/dive-into-python3/your-first-python-program.html)
+```ruby
+python -m SimpleHTTPServer [port]
+python -m http.server [port]
+```
+
 #### OpsDev
 - [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManager)
 - [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed-awk-notes)
 - https://github.com/Gazler/githug
-```ruby
-python -m SimpleHTTPServer [port]
-python -m http.server [port]
-```
 
 #### Database
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
