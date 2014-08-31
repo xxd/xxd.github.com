@@ -1,4 +1,6 @@
+
 $ rvm list known
+
 $ rvm install 2.1.2
 $ rvm use 2.1.2 --default
 $ rvm gemset create rails4
