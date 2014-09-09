@@ -8,9 +8,11 @@ http://www.cnblogs.com/buro79xxd/
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
     * [NSFileManager] (iOS/NSFileManager)
+    * modalViewController & dismissModalViewControllerAnimated" iOS 6.0以后 is deprecated 而采用presentedViewController，写法如下
 ```ruby
     testViewController *testVC = [[testViewController alloc] init];
     [self presentViewController:slidingMenuController animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 ```
 
 - [Objective-C](objc/ObjectiveC_page)
