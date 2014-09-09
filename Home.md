@@ -8,6 +8,11 @@ http://www.cnblogs.com/buro79xxd/
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
     * [NSFileManager] (iOS/NSFileManager)
+```ruby
+    testViewController *testVC = [[testViewController alloc] init];
+    [self presentViewController:slidingMenuController animated:YES completion:nil];
+```
+
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class-import)
     * [Objective-C消息简明笔记](objc/obcj-message)
