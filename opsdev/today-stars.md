@@ -1,2 +1,3 @@
 - 开始打nogi，所以研究小书包的视频，控制腋下，控制不了就控制小臂，形成2on1，然后同侧手可以arm-drag(Butterfly-Armdrag to Double Leg from Butterfly)或对侧手可以arm-push钩腿扫(Butterfly-MG 2 on 1 Hook Sweep 1)如果失败就进入deep half或x-garud
-- half guard拿背，木村居然忘了打了，老打eddie的那种half
+- half guard拿背，木村居然忘了打了，老打eddie的那种half，Half，Close，Open，ButterFly，X，Deep-Half的sweep想不起来了
+- 貌似一次侧控和浮固都没有拿，老是骑乘，骑乘转换侧控也没成功
