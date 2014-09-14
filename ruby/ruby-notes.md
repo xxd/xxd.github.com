@@ -11,6 +11,37 @@
 >>> 
 >>> print reduce(lambda x, y: x + y, foo)
 139
+
+x=""
+puts "x is not empty" if !x.empty?
+x="a"
+puts "x is not empty" if !x.empty?
+
+string = "foobar"
+puts "The string '#{string}' is nonempty." unless string.empty?
+
+ ('a'..'z').to_a.shuffle[0..7].join  # 将取出的元素合并成字符串
+
+ ###inspect用法
+ >> puts (1..5).to_a            # 把数组作为字符串输出
+1
+2
+3
+4
+5
+>> puts (1..5).to_a.inspect    # 输出一个数组字面量形式
+[1, 2, 3, 4, 5]
+>> puts :name, :name.inspect
+name
+:name
+>> puts "It worked!", "It worked!".inspect
+It worked!
+"It worked!"
+>> flash = { success: "It worked!", error: "It failed." }
+=> {:success=>"It worked!", :error=>"It failed."}
+>> flash.each do |key, value|
+?>   puts "Key #{key.inspect} has value #{value.inspect}"
+>> end
 ```
 
 ```Ruby
