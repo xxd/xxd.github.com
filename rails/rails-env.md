@@ -28,6 +28,8 @@ rails generate scaffold Micropost content:string user_id:integer
 bundle exec rake db:migrate
 rails server
 rails console
+------
+rails new sample_app --skip-test-unit
 ```
 
 ###Git
