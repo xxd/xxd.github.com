@@ -6,6 +6,7 @@ $ rvm use 2.1.2 --default
 $ rvm gemset create rails4
 $ rvm use 2.1.2@rails4 --default
 $ rvm gemset list
+$ gem install rails --version 4.0.4 --no-ri --no-rdoc
 ```
 
 ###Rails项目
