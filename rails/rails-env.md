@@ -18,6 +18,16 @@ $ rails new first_app
 $ bundle update
 $ bundle install
 $ rails server
+------
+cd rails_projects
+rails new demo_app
+cd demo_app
+rails generate scaffold User name:string email:string
+bundle exec rake db:migrate
+rails generate scaffold Micropost content:string user_id:integer
+bundle exec rake db:migrate
+rails server
+rails console
 ```
 
 ###Git
