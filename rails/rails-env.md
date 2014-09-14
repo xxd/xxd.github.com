@@ -30,6 +30,7 @@ rails server
 rails console
 ------
 rails new sample_app --skip-test-unit
+传入命令的控制器名使用的是驼峰式命名法，生成的控制器文件名使用的是蛇底式命名法，因此名为 StaticPages 的控制器对应的文件名为 static_pages_controller.rb。这只是一个约定
 ```
 
 ###Git
