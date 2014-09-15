@@ -4,12 +4,12 @@
 	$ bundle install
 
 2 config/routes.rb
-<pre>
+```ruby
 require 'grape'
 EtpassAPI::Application.routes.draw do
   mount Etpass::API => "/"
 end
-</pre>
+```
 
 3 检查
 
@@ -22,16 +22,16 @@ end
 	etpass_api  / Etpass::API
 
 4 app/models/et_order.rb
-<pre>
+```ruby
 class EtOrder < ActiveRecord::Base
 	attr_accessible :pkid
 end
-</pre>
+```
 
 5 app/api/etpass/api.rb
 #####注意这里的命名方式就是routers.rb中，定义的EtpassAPI，那么前边的Etpass就是module，API就是class
 
-<pre>
+```ruby
 require 'grape'
 
 module Etpass
@@ -61,13 +61,13 @@ module Etpass
     end
   end
 end
-</pre>
+```
 
 
 ####但是如果你从业务方面有很多的API需要写，总不能都放到一个api.rb文件内，下面讲述如何用api.rb来管理其他的api
 
 #####首先建立lib/api.rb
-<pre>
+```ruby
 require 'grape'
 
 module Etpass
@@ -82,10 +82,10 @@ module Etpass
   end
 end
 Dir["#{Rails.root}/app/api/etpass/*.rb"].each {|file| require file }
-</pre>
+```
 
 #####其次建立et_order相关的api，app/api/etpass/et_order_api.rb
-<pre>
+```ruby
 require 'api'
 
 module Etpass
@@ -110,7 +110,7 @@ module Etpass
     end
   end
 end
-</pre>
+```
 
 6 上边的两种方法都是访问以下链接
 
