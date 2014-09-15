@@ -34,6 +34,7 @@ http://www.cnblogs.com/buro79xxd/
 - [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
 - [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
 - [Ruby Programming Notes](ruby/ruby-notes)
+- [Grape](ruby/grape-notes)
 
 #### Python
 - [深入 Python 3](http://sebug.net/paper/books/dive-into-python3/your-first-python-program.html)
