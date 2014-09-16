@@ -27,13 +27,16 @@ http://www.cnblogs.com/buro79xxd/
 - [Android](Android-page)
 
 #### Ruby and Rails
-- [Rails环境部署](rails/rails-env)
-- [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-06)
-- [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
-- [muo_rails部署](rails/muo-rails-deploy)
-- [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
-- [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
-- [Ruby Programming Notes](ruby/ruby-notes)
+- Rails
+    * [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
+    * [Rails笔记](ruby/rails-notes)
+    * [Rails环境部署](rails/rails-env)
+    * [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-06)
+    * [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
+    * [muo_rails部署](rails/muo-rails-deploy)
+    * [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
+- Ruby
+    * [Ruby笔记](ruby/ruby-notes)
 - Gem
     * [Grape](ruby/grape-notes)
 
