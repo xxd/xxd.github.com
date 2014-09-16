@@ -1,9 +1,16 @@
+#### erb文件
 - 使用render把代码模块化，把关于HTML shim和header的代码放到views/layouts/shim和header两个文件中，然后使用render调用（参考：http://railstutorial-china.org/chapter5.html#section-5-1-3）
 ```Ruby
 <%= render 'layouts/shim' %>
 <%= render 'layouts/header' %>
 ```
 
+- xx_path直接指向路由，例如`signup_path`指向的就是routers.rb中的`match '/signup', to: 'users#new', via: 'get'`
+```ruby
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+```
+
+#### 命令行
 - rails generate生成一个方法（参考：http://railstutorial-china.org/chapter5.html#section-5-4-1）
 ```ruby
 rails generate controller Users new --no-test-framework
