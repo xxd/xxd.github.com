@@ -19,15 +19,17 @@
     ```
     * rails generate model 生成 User 模型，以及 name 和 email 属性所用的命令。然后建立数据库表格
     ```ruby
-    rails generate model User name:string email:string
+    rails generate model User name:string email:string #生成确保建表文件db/migrate/[timestamp]_create_USERS.rb
     rails destroy model Foo
-    bundle exec rake db:migrate
-    bundle exec rake db:rollback
+    bundle exec rake db:migrate#执行SQL语句
+    bundle exec rake db:rollback #回滚SQL语句
     rake db:migrate VERSION=0 # 回到最开始的状态
     ```
     * rails generate migration增加索引
     ```ruby
-    rails generate migration add_index_to_users_email
+    rails generate migration add_index_to_users_email #生成确保 Email 唯一性的迁移文件
+db/migrate/[timestamp]_add_index_to_users_email.rb
+    bundle exec rake db:migrate #执行SQL语句
     ```
 - rails console
 ```ruby
