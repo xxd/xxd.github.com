@@ -16,7 +16,8 @@
     ```ruby
     rails generate controller Users new --no-test-framework
     ```
-    * rails generate model 生成 User 模型，以及 name 和 email 属性所用的命令。
+    * rails generate model 生成 User 模型，以及 name 和 email 属性所用的命令。然后建立数据库表格
     ```ruby
     rails generate model User name:string email:string
+    bundle exec rake db:migrate
     ```
