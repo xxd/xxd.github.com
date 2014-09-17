@@ -1,4 +1,5 @@
 - https://github.com/intridea/grape
+- [Ruby Web API Server小评测](http://robbinfan.com/blog/45/ruby-framework-benchmark?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+javaeye%2Frobbin+%28robbin的博客%29)：各种Ruby写API的框架的评测以及代码
 
 1 in Gemfile
 
