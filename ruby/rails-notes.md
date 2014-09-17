@@ -12,6 +12,7 @@
 
 #### Model：Users.rb
 - Rails4.0 中已经集成好了，只需调用一个方法就可以了，这个方法是 has_secure_password。只要数据库中有 password_digest 列，在模型文件中加入 has_secure_password 方法后就能验证用户身份了。
+- 如果遇到`[deprecated] I18n.enforce_available_locales will default to true in the future`错误，`config/application.rb`文件内`class Application < Rails::Application`之后添加`I18n.enforce_available_locales = true`
 
 #### 命令行
 - rails generate命令
