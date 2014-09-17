@@ -27,6 +27,8 @@ http://www.cnblogs.com/buro79xxd/
 - [Android](Android-page)
 
 #### Ruby and Rails
+- Ruby
+    * [Ruby笔记](ruby/ruby-notes)
 - Rails
     * [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
     * [Rails笔记](ruby/rails-notes)
@@ -35,10 +37,8 @@ http://www.cnblogs.com/buro79xxd/
     * [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
     * [muo_rails部署](rails/muo-rails-deploy)
     * [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
-- Ruby
-    * [Ruby笔记](ruby/ruby-notes)
-- Gem
-    * [Grape](ruby/grape-notes)
+    * Gem
+        * [Grape](ruby/grape-notes)：写API
 
 #### Python
 - [深入 Python 3](http://sebug.net/paper/books/dive-into-python3/your-first-python-program.html)
@@ -47,12 +47,13 @@ python -m SimpleHTTPServer [port]
 python -m http.server [port]
 ```
 
-#### OpsDev
+#### OpsDev(Linux,shell,others)
 - [监控调优](opsdev/monitorTuning)
 - [用户管理](opsdev/userManager)
 - [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed-awk-notes)
 - [git](opsdev/git-notes)
+- [正则表达式](opsdev/regex-notes)
 
 #### Database
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
