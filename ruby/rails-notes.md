@@ -31,6 +31,7 @@
     user = User.new(name: "Michael Hartl", email: "mhartl@example.com")
     user.save
     user.name
+    user.respond_to?(:name)
     User.find(1)
     User.find_by_email("mhartl@example.com")
     User.find_by(email: "mhartl@example.com") #4.0以后
