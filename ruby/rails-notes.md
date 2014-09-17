@@ -25,10 +25,11 @@
     bundle exec rake db:rollback #回滚SQL语句
     rake db:migrate VERSION=0 # 回到最开始的状态
     ```
-    * rails generate migration增加索引
+    * rails generate migration向现有的表内增加内容
     ```ruby
     rails generate migration add_index_to_users_email #生成确保 Email 唯一性的迁移文件
 db/migrate/[timestamp]_add_index_to_users_email.rb
+    rails generate migration add_password_digest_to_users password_digest:string #增加字段
     bundle exec rake db:migrate #执行SQL语句
     ```
 - rails console
