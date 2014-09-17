@@ -1,4 +1,4 @@
-#### erb文件
+#### View：erg文件
 - 使用render把代码模块化，把关于HTML shim和header的代码放到views/layouts/shim和header两个文件中，然后使用render调用（参考：http://railstutorial-china.org/chapter5.html#section-5-1-3）
 ```Ruby
 <%= render 'layouts/shim' %>
@@ -9,6 +9,9 @@
 ```ruby
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 ```
+
+#### Model：Users.rb
+- Rails4.0 中已经集成好了，只需调用一个方法就可以了，这个方法是 has_secure_password。只要数据库中有 password_digest 列，在模型文件中加入 has_secure_password 方法后就能验证用户身份了。
 
 #### 命令行
 - rails generate命令
