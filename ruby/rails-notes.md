@@ -25,6 +25,10 @@
     bundle exec rake db:rollback
     rake db:migrate VERSION=0 # 回到最开始的状态
     ```
+    * rails generate migration增加索引
+    ```ruby
+    rails generate migration add_index_to_users_email
+    ```
 - rails console
 ```ruby
     User.new
