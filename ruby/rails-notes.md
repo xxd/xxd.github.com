@@ -25,3 +25,19 @@
     bundle exec rake db:rollback
     rake db:migrate VERSION=0 # 回到最开始的状态
     ```
+- rails console
+```ruby
+    User.new
+    user = User.new(name: "Michael Hartl", email: "mhartl@example.com")
+    user.save
+    user.name
+    User.find(1)
+    User.find_by_email("mhartl@example.com")
+    User.find_by(email: "mhartl@example.com") #4.0以后
+    User.first
+    User.all
+    user.destroy
+    user
+    user.update_attribute(:name, "The Dude")
+    user.update_attributes(name: "The Dude", email: "dude@abides.org")
+```
