@@ -4,10 +4,15 @@
 <%= render 'layouts/shim' %>
 <%= render 'layouts/header' %>
 ```
-
 - xx_path直接指向路由，例如`signup_path`指向的就是routers.rb中的`match '/signup', to: 'users#new', via: 'get'`
 ```ruby
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+```
+- include ActionView::Helpers::TextHelper的`pluralize`方法，就是合并两个字符串
+```ruby
+>> include ActionView::Helpers::TextHelper
+>> pluralize(1, "error")
+=> "1 error"
 ```
 
 #### Model：Users.rb
