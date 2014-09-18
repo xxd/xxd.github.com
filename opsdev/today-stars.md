@@ -5,6 +5,7 @@
     * 终于知道被过腿，或者侧控拿到elbow push后对手继续压身的解法—fireman carry `Escape side&防过腿-Elbow Push to Fireman's Carry~MG`
     * Nogi-Close guard破坏对手姿势，起身推下一只对手做姿势的手假装木村，搂头腿夹把对手拉下来，然后就可以做橡皮等等`X-Robert.Drysdale.Nth.Di 4 橡皮`
     * 拿到背，对手死防，搂额头，搂鼻子，手插入，不用做裸脚，夹脖子就行`Back Rear Naked Choke when the opponent defends～MG`
+
 2014-09-10
 > 永远不要放弃你真正想要的东西。等待虽难，但后悔更甚
 
