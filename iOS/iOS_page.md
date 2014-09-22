@@ -1,3 +1,12 @@
+
+- 如何在其他类调用AppDelegate的东西
+```ruby
+- (NSArray*)sandwiches {
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    return appDelegate.sandwiches;
+}
+```
+
 ### 常用代码
 1. 17个常用代码整理 http://www.cocoachina.com/newbie/tutorial/2012/1220/5377.html
 2. iOS开发：小技巧积累 http://www.cocoachina.com/newbie/tutorial/2012/1016/4928.html
