@@ -12,26 +12,34 @@
 AskViewController *askVC = [[AskViewController alloc] initWithNibName:@"AskViewController" bundle:nil];
 ```
 
+- init Storyboard
+```ruby
+UIStoryboard *mystoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SandwichesViewController *vcStoryboard  = [mystoryboard instantiateViewControllerWithIdentifier:@"SnandwichVC"];
+```
+
 - init tableview controller
 ```ruby
 DetailTableViewController *detailViewController = [[DetailTableViewController alloc] initWithStyle:UITableViewStylePlain];
 ```
 
+- init any controller
 ```ruby
-    Class vcClass = NSClassFromString(@"ImageTargetsViewController");
-    id vc = [[vcClass alloc]  initWithNibName:nil bundle:nil];
-    SampleAppSlidingMenuController *slidingMenuController = [[SampleAppSlidingMenuController alloc] initWithRootViewController:vc]; 
-    [self.navigationController pushViewController:slidingMenuController animated:NO];
+Class vcClass = NSClassFromString(@"ImageTargetsViewController");
+id vc = [[vcClass alloc]  initWithNibName:nil bundle:nil];
+SampleAppSlidingMenuController *slidingMenuController = [[SampleAppSlidingMenuController alloc] initWithRootViewController:vc]; 
+[self.navigationController pushViewController:slidingMenuController animated:NO];
 ```
-- Init 
+
+- Init another way
 ```ruby
-    + (id)loadController:(Class)classType {
-        NSString *className = NSStringFromClass(classType);
-        UIViewController *controller = [[classType alloc] initWithNibName:className bundle:nil];
-        return controller;
-    }
++ (id)loadController:(Class)classType {
+    NSString *className = NSStringFromClass(classType);
+    UIViewController *controller = [[classType alloc] initWithNibName:className bundle:nil];
+    return controller;
+}
     
-    MyViewController *c = [LayoutUtil loadController:[MyViewController class]];
+MyViewController *c = [LayoutUtil loadController:[MyViewController class]];
 ```
 
 ### 常用代码
