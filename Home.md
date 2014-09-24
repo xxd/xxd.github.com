@@ -6,6 +6,7 @@ http://www.cnblogs.com/buro79xxd/
     * [UINavigation] (iOS/UINavigation)
     * [UITableView](iOS/UITableView)
     * [UITableViewCell] (iOS/UITableViewCell)
+    * [UIScrollView](iOS/UIScrollView)
     * [UIGestureRecognizer](iOS/UIGestureRecognizer)
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
