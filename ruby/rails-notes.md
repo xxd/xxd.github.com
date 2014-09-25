@@ -39,6 +39,7 @@ end
     rails destroy model Foo
     bundle exec rake db:migrate#执行SQL语句
     bundle exec rake db:rollback #回滚SQL语句
+    bundle exec rake db:reset
     rake db:migrate VERSION=0 # 回到最开始的状态
     ```
     * rails generate migration向现有的表内增加内容
