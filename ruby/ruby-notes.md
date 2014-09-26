@@ -1,5 +1,18 @@
 ###Ruby常用
 
+- 三元操作符
+```Ruby
+if boolean?
+  do_one_thing
+else
+  do_something_else
+end
+
+Ruby 和其他很多语言一样（包括 C/C++，Perl，PHP 和 Java），提供了一种更为简单的表达式来替换这种流程控制结构——三元操作符（之所以起了这个名字，是因为三元操作符涉及三个部分）：
+
+boolean? ? do_one_thing : do_something_else
+```
+
 ```Ruby
 >>> foo = [2, 18, 9, 22, 17, 24, 8, 12, 27]
 >>> 
