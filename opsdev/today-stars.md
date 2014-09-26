@@ -1,3 +1,5 @@
+- [30岁年薪20万算不算很失败？](http://mp.weixin.qq.com/s?__biz=MjM5OTA1MDUyMA==&mid=201401656&idx=1&sn=0970ffc44ecb3f1f78cfae1427b9131b#rd)
+
 2014-09-17
 - [Ruby Web API Server小评测](http://robbinfan.com/blog/45/ruby-framework-benchmark?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+javaeye%2Frobbin+%28robbin的博客%29)：各种Ruby写API的框架的评测以及代码
 - 拳击：前手刺拳是迈步向前，不能完全侧身不然后手拳部分空虚。后手拳一直贴在下颚方便出拳，出拳描述不清，要下次多练习后补充。
