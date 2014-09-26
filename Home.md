@@ -42,6 +42,7 @@ http://www.cnblogs.com/buro79xxd/
     * [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
     * Gem
         * [Grape](ruby/grape-notes)：写API
+- [30款最好的 Bootstrap 3.0 免费主题和模板](www.cnblogs.com/lhb25/p/30-free-bootstrap-templates.html)
 
 #### Python
 - [深入 Python 3](http://sebug.net/paper/books/dive-into-python3/your-first-python-program.html)
