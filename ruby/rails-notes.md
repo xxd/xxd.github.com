@@ -66,3 +66,19 @@ db/migrate/[timestamp]_add_index_to_users_email.rb
     user.update_attribute(:name, "The Dude")
     user.update_attributes(name: "The Dude", email: "dude@abides.org")
 ```
+
+#### Routers
+参考：http://guides.rubyonrails.org/routing.html
+```ruby
+  ##以下得到的 URL 地址应该是类似 /users/1/following 和 /users/1/followers 这种形式
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
+  root to: 'static_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+```
