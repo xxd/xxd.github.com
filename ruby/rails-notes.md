@@ -28,6 +28,12 @@ end
 <%= form_for(current_user.relationships.find_by(followed_id: @user.id),
              html: { method: :delete }),
              remote: true) do |f| %>
+
+#controller里再加入：
+respond_to do |format|
+  format.html { redirect_to @user }
+  format.js
+end
 ```
 
 #### Model：Users.rb
