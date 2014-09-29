@@ -70,23 +70,23 @@ db/migrate/[timestamp]_add_index_to_users_email.rb
 #### Routers
 参考：http://guides.rubyonrails.org/routing.html
 ```ruby
-  ##以下得到的 URL 地址应该是类似 /users/1/following 和 /users/1/followers 这种形式
-  resources :users do
-    member do
-      get :following, :followers
-    end
+##以下得到的 URL 地址应该是类似 /users/1/following 和 /users/1/followers 这种形式
+resources :users do
+  member do
+    get :following, :followers
   end
+end
 
-  ##我们还可以使用 collection 方法，但 URL 中就没有用户 id 了，设定路由后得到的 URL 是 /users/tigers（可以用来显示程序中所有的老虎）
+##我们还可以使用 collection 方法，但 URL 中就没有用户 id 了，设定路由后得到的 URL 是 /users/tigers（可以用来显示程序中所有的老虎）
 resources :users do
   collection do
     get :tigers
   end
 end
 
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
-  root to: 'static_pages#home'
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+resources :sessions, only: [:new, :create, :destroy]
+resources :microposts, only: [:create, :destroy]
+root to: 'static_pages#home'
+match '/signup',  to: 'users#new',            via: 'get'
+match '/signout', to: 'sessions#destroy',     via: 'delete'
 ```
