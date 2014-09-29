@@ -1,2 +1,2 @@
-
 - [githug](https://github.com/Gazler/githug)
+- [理解git常用命令原理](https://codemacro.com/2014/09/09/understand-git/)
