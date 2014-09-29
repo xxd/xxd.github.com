@@ -76,6 +76,14 @@ db/migrate/[timestamp]_add_index_to_users_email.rb
       get :following, :followers
     end
   end
+
+  ##我们还可以使用 collection 方法，但 URL 中就没有用户 id 了，设定路由后得到的 URL 是 /users/tigers（可以用来显示程序中所有的老虎）
+resources :users do
+  collection do
+    get :tigers
+  end
+end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   root to: 'static_pages#home'
