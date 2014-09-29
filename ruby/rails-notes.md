@@ -21,6 +21,14 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 end
 ```
+- 只要把 form_for 改成 form_for..., remote: true，Rails 就会自动使用 Ajax 处理表单了，用不用Ajax就这么点区别
+```ruby
+<%= form_for(current_user.relationships.find_by(followed_id: @user.id),
+             html: { method: :delete }) do |f| %>
+<%= form_for(current_user.relationships.find_by(followed_id: @user.id),
+             html: { method: :delete }),
+             remote: true) do |f| %>
+```
 
 #### Model：Users.rb
 - Rails4.0 中已经集成好了，只需调用一个方法就可以了，这个方法是 has_secure_password。只要数据库中有 password_digest 列，在模型文件中加入 has_secure_password 方法后就能验证用户身份了。
