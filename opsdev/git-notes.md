@@ -1,2 +1,3 @@
 - [githug](https://github.com/Gazler/githug)
 - [理解git常用命令原理](https://codemacro.com/2014/09/09/understand-git/)
+- [一张图理解 Git 对象模型](https://ruby-china.org/topics/20723)
