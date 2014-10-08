@@ -42,6 +42,7 @@ SampleAppSlidingMenuController *slidingMenuController = [[SampleAppSlidingMenuCo
 MyViewController *c = [LayoutUtil loadController:[MyViewController class]];
 ```
 ### 选择Xcode版本打包发布App
+
 如何你和我一样手贱安装了Xcode6，同时又需要发布应用到商店时，你会发现打好的包是通不过审核的。验证报错：
     unable to validate application archives of type:0x0
 Google报错信息后，发现Beta版的Xcode打的包是不能发布到商店的。这时候即使你启用原来的Xcode5去打包，打出来的包也会报错的。这是因为安装Xcode6Beta以后，本地的命令行工具已经被换成了最新的。
