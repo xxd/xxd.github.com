@@ -1,5 +1,5 @@
-http://www.cnblogs.com/buro79xxd/
-http://www.ios-wiki.com
+- http://www.cnblogs.com/buro79xxd/
+- http://www.ios-wiki.com
 - [今日加星](opsdev/today-stars)
 
 #### Mobile
@@ -31,11 +31,9 @@ http://www.ios-wiki.com
 - [Sketch](Sketch-page)
 
 #### Ruby and Rails
-- Ruby
-    * [Ruby笔记](ruby/ruby-notes)
-- Rails
+- [Ruby](ruby/ruby-notes)
+- [Rails](ruby/rails-notes)
     * [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
-    * [Rails笔记](ruby/rails-notes)
     * [Rails环境部署](rails/rails-env)
     * [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-06)
     * [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
