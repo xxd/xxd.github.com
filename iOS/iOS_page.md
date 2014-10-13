@@ -1,5 +1,7 @@
 源码
 - [Path 4.0的弹出菜单--DCPathButton](http://code.cocoachina.com/detail/232180)
+- [PDF文件浏览和阅读--Reader](http://code.cocoachina.com/detail/232162)
+- [ActionSheetPicker-3.0](http://code.cocoachina.com/detail/232178)
 
 ### 音频
 ios之音频转换：amr转换wav（安卓amr是常用格式，wav是ios格式）
