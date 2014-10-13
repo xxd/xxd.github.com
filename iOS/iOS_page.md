@@ -1,10 +1,5 @@
-- 如何在其他类调用AppDelegate的东西
-```ruby
-- (NSArray*)sandwiches {
-    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    return appDelegate.sandwiches;
-}
-```
+源码
+- [Path 4.0的弹出菜单--DCPathButton](http://code.cocoachina.com/detail/232180)
 
 ### 音频
 ios之音频转换：amr转换wav（安卓amr是常用格式，wav是ios格式）
@@ -21,6 +16,15 @@ ios之音频转换：amr转换wav（安卓amr是常用格式，wav是ios格式�
     [VoiceConverter wavToAmr:videopath amrSavePath:laocationgPath];
     [VoiceConverter amrToWav:videopath wavSavePath:laocationgPath];
   
+}
+```
+
+### AppDelegate
+- 如何在其他类调用AppDelegate的东西
+```ruby
+- (NSArray*)sandwiches {
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    return appDelegate.sandwiches;
 }
 ```
 
