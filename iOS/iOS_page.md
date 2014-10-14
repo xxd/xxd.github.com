@@ -4,19 +4,19 @@
 - [ActionSheetPicker-3.0](http://code.cocoachina.com/detail/232178)
 - ios之音频转换：amr转换wav（安卓amr是常用格式，wav是ios格式）
     * http://code4app.com/ios/边录音边转码/521c65d56803fab864000001
-```ruby
-#import "VoiceConverter.h"//第三方库
+    * VoiceConverter 第三方库
+```
+#import "VoiceConverter.h"第三方库
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *videopath=@"";//文件的路径
-    NSString *laocationgPath=@"";//转换后保存的路径
+    NSString *videopath=@""; //文件的路径
+    NSString *laocationgPath=@""; //转换后保存的路径
    
    // 音频转换
     [VoiceConverter wavToAmr:videopath amrSavePath:laocationgPath];
     [VoiceConverter amrToWav:videopath wavSavePath:laocationgPath];
-  
 }
 ```
 
