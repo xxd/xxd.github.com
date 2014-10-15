@@ -9,7 +9,7 @@
 
 ####其他开发
 - [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)：正在收集JS和Node相关的资料
-
+- [使用 Rails 创建一个简单的求职公告板 (Rik Lomas)  ](https://medium.com/@riklomas/how-to-create-a-simple-jobs-board-in-ruby-on-rails-even-if-youve-never-coded-before-9b296c4df483)：#Rails入门项目#
 
 ####运维
 - [NGINX 性能调优指南 （Nginx官方出品Rick Nelson） ](http://nginx.com/blog/tuning-nginx/)：没看但是估计在今后的工作中会用到。#没看备用#
