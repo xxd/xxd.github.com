@@ -6,8 +6,11 @@
 ####移动开发
 - [Instagram工程师教你如何改善App的性能](http://www.csdn.net/article/2014-10-05/2821953-instagram-improved-their-apps-performance):介绍了Instagram从扁平化设计中获取灵感来优化app #app性能优化#
 
-------
+####运维
+- [NGINX 性能调优指南 （Nginx官方出品Rick Nelson） ](http://nginx.com/blog/tuning-nginx/)：没看但是估计在今后的工作中会用到
 
+
+------
 ###2014-09
 ####后端开发
 - [Ruby Web API Server小评测](http://robbinfan.com/blog/45/ruby-framework-benchmark?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+javaeye%2Frobbin+%28robbin的博客%29)：各种Ruby写API的框架的评测以及代码
