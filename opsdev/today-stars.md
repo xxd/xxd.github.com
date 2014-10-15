@@ -14,6 +14,7 @@
 
 ####运维
 - [NGINX 性能调优指南 （Nginx官方出品Rick Nelson） ](http://nginx.com/blog/tuning-nginx/)：没看但是估计在今后的工作中会用到。#没看备用#
+- [PHP&Nginx问题排查，日志分析(干货)](http://mp.weixin.qq.com/s?__biz=MjM5NzUwNDA5MA==&mid=200596752&idx=1&sn=37ecae802f32f45ddc0240548943bcbe&scene=1)：很棒的干货
 
 ####数据库
 - [Bugsnag 的 MongoDB 分片集群使用经验（郭蕾） ](http://www.infoq.com/cn/news/2014/10/bugsnag-mongo-sharding)：文章不长，侧重实战，并且提供了几个有用的脚本。#没看备用#
