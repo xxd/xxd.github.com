@@ -8,8 +8,10 @@
 2014-09
 ####后端开发
 - [Ruby Web API Server小评测](http://robbinfan.com/blog/45/ruby-framework-benchmark?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+javaeye%2Frobbin+%28robbin的博客%29)：各种Ruby写API的框架的评测以及代码
+
 ####拳击
 - 前手刺拳是迈步向前，不能完全侧身不然后手拳部分空虚。后手拳一直贴在下颚方便出拳，出拳描述不清，要下次多练习后补充。
+
 ####巴柔
 - 终于知道被过腿，或者侧控拿到elbow push后对手继续压身的解法—fireman carry `Escape side&防过腿-Elbow Push to Fireman's Carry~MG`
 - Nogi-Close guard破坏对手姿势，起身推下一只对手做姿势的手假装木村，搂头腿夹把对手拉下来，然后就可以做橡皮等等`X-Robert.Drysdale.Nth.Di 4 橡皮`
