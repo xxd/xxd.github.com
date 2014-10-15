@@ -1,6 +1,7 @@
 - http://www.cnblogs.com/buro79xxd/
 - [iOS wiki](http://www.ios-wiki.com)
 - [Cocoa开发者中心](http://d.cocoachina.com)
+- [码农](http://weekly.manong.io)
 - [今日加星](opsdev/today-stars)
 
 #### Mobile
