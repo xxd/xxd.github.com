@@ -1,4 +1,5 @@
 - 目标：iOS主力开发，运维知识，前端HTML5+JS(Node)，后端Ruby写API+Rails写网页
+- [从30岁至35岁：为你的生命多积累一些厚度](http://www.douban.com/note/372348352/)
 - [30岁年薪20万算不算很失败？](http://mp.weixin.qq.com/s?__biz=MjM5OTA1MDUyMA==&mid=201401656&idx=1&sn=0970ffc44ecb3f1f78cfae1427b9131b#rd)
 - [原来这才叫休息！——科学家揭示真正的“休息模式”](http://mp.weixin.qq.com/s?__biz=MjM5MTUzMDM4MA==&mid=201103040&idx=2&sn=d5fa791e4b018fe6d1087c9ca6ee6f54&scene=2&from=timeline&isappinstalled=0#rd)
 
