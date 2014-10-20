@@ -22,6 +22,7 @@
 
 ####数据库
 - [Bugsnag 的 MongoDB 分片集群使用经验（郭蕾） ](http://www.infoq.com/cn/news/2014/10/bugsnag-mongo-sharding)：文章不长，侧重实战，并且提供了几个有用的脚本。#没看备用#
+- [细看INNODB数据落盘](http://www.woqutech.com/?p=1459)：#没看备用#
 
 
 ------
