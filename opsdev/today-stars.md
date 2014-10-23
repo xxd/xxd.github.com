@@ -7,6 +7,7 @@
 ###2014-10
 > - 据说，如果你心底有十个秘密，那这其中你愿意告诉父母的不会超过五个，愿意告诉恋人的不会超过三个，愿意告诉流水朋友的有一个就不错了，而如果面对一个陌生人，你可能会把七八个秘密都告诉他。（via：幻灭妖僧）
 > - 不以物喜，不以己悲，不畏权暴，明辨是非。
+> - “永远留住30%的神秘。”那30%会不断被用掉，也就意味着我们需要不断的去学习，积累，制造新的能力和学识。当我觉得自己的存货不足30%的时候，就会警示自己少说少求，静下心来去积累更多的东西。
 
 ####移动开发
 - [Instagram工程师教你如何改善App的性能](http://www.csdn.net/article/2014-10-05/2821953-instagram-improved-their-apps-performance):介绍了Instagram从扁平化设计中获取灵感来优化app #app性能优化#
@@ -24,20 +25,9 @@
 - [Bugsnag 的 MongoDB 分片集群使用经验（郭蕾） ](http://www.infoq.com/cn/news/2014/10/bugsnag-mongo-sharding)：文章不长，侧重实战，并且提供了几个有用的脚本。#没看备用#
 - [细看INNODB数据落盘](http://www.woqutech.com/?p=1459)：#没看备用#
 
-
 ------
 ###2014-09
 ####后端开发
 - [Ruby Web API Server小评测](http://robbinfan.com/blog/45/ruby-framework-benchmark?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+javaeye%2Frobbin+%28robbin的博客%29)：各种Ruby写API的框架的评测以及代码
 
-####拳击
-- 前手刺拳是迈步向前，不能完全侧身不然后手拳部分空虚。后手拳一直贴在下颚方便出拳，出拳描述不清，要下次多练习后补充。
-
 ####巴柔
-- 终于知道被过腿，或者侧控拿到elbow push后对手继续压身的解法—fireman carry `Escape side&防过腿-Elbow Push to Fireman's Carry~MG`
-- Nogi-Close guard破坏对手姿势，起身推下一只对手做姿势的手假装木村，搂头腿夹把对手拉下来，然后就可以做橡皮等等`X-Robert.Drysdale.Nth.Di 4 橡皮`
--拿到背，对手死防，搂额头，搂鼻子，手插入，不用做裸脚，夹脖子就行`Back Rear Naked Choke when the opponent defends～MG`
-- 开始打nogi，所以研究书包的视频，首先就是手对手的过去，选择抓住同侧手，抓住对侧手，拿到摔跤把位准备实行大个摔(`ButterFly1-W1摔，没成改断头`)，同侧手可以arm-drag(`Butterfly3-Armdrag to Double Leg from Butterfly`)或对侧手可以arm-push钩腿扫(`ButterFly2-W3-2on1 Hook Sweep`)，对手很凶的往上冲就踩胯(`ButterFly4-W4踩胯阻挡`)，如果失败就进入deep half(`Half Guard to Deep half`)或x-garud
-- half guard拿背，木村居然忘了打了，老打eddie的那种half，Half，Close，Open，ButterFly，X，Deep-Half的sweep想不起来了
-- 貌似一次侧控和浮固都没有拿，老是骑乘，骑乘转换侧控也没成功
-- 拿背后控制手然后做裸绞的方法，参考孔旭和日本7集
