@@ -36,7 +36,6 @@
 #### Ruby and Rails
 - [Ruby](ruby/ruby-notes)
 - [Rails](ruby/rails-notes)
-    * [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/chapter2.html)
     * [Rails环境部署](rails/rails-env)
     * [Rails@Ubuntu1204部署](rails/rails-setup-ubuntu1204-06)
     * [Rails@Ubuntu1004部署](rails/rails-setup-ubuntu1004)
