@@ -1,5 +1,5 @@
 - [Ruby on Rails Tutorial 原书第 2 版（涵盖 Rails 4）](http://railstutorial-china.org/rails4/)
-
+- [Rails Guide](http://guides.ruby-china.org)
 ###环境
 ```
 $ rvm list known
