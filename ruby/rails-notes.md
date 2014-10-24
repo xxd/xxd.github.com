@@ -1,4 +1,5 @@
 #### View：erg文件
+- Asset Pipeline使用起来感觉不是特别方便，部署到产品环境时，还需要运行一些rake task，比如 `rake assets:precompile RAILS_ENV=production` 等：参考http://baya.github.io/2014/02/17/understand-rails-asset-pipline/
 - 使用render把代码模块化，把关于HTML shim和header的代码放到views/layouts/shim和header两个文件中，然后使用render调用（参考：http://railstutorial-china.org/chapter5.html#section-5-1-3）
 ```Ruby
 <%= render 'layouts/shim' %>
