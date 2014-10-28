@@ -44,7 +44,7 @@
 {
 	if ([segue.identifier isEqualToString:@"ShowDetail"]) {
 		DetailViewController *controller = segue.destinationViewController;
-		controller.delegate = self;//在需要调用delegate方法的时候调用它
+		controller.delegate = self; #在需要调用delegate方法的时候调用它
 ............ 
 }
 ```
