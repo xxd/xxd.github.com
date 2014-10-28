@@ -1,4 +1,3 @@
-
 1.**DetailViewController.h**
 ```
 @class DetailViewController;
@@ -9,13 +8,13 @@
 - (void)detailViewControllerDidClose:(DetailViewController *)controller;
 
 @end
-```
 
 @interface DetailViewController : UIViewController <UINavigationBarDelegate>
 {
 	**id <DetailViewControllerDelegate> delegate;**
 }
 **@property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;**
+```
 
 2.**DetailViewController.m**
 ```
