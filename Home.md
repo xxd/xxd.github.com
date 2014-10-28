@@ -27,6 +27,7 @@
     * [Objective-C消息简明笔记](objc/obcj-message)
     * [Getter与Setter](objc/getter-setter)
     * [常量与变量](objc/const-var)
+    * [@synthesis obj = _obj; 为什么要用下划线](objc/synthesis)
 - [Swift](swift/swift-page)
     * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
