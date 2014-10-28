@@ -1,5 +1,7 @@
 加下划线是为了区别成员变量名与局部变量名
 you access the property with self.segmentedControl, and the instance variable with _segmentedControl.
+以下来自：http://www.cocoachina.com/bbs/read.php?tid=98617
+
 ```
 @synthesize happiness;  //如果不写 = _happiness
 -(void) setHappiness:(int)happiness {...} // OC 会自动填充完成setter语句
