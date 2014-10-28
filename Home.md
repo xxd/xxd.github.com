@@ -28,6 +28,7 @@
     * [Getter与Setter](objc/getter-setter)
     * [常量与变量](objc/const-var)
     * [@synthesis obj = _obj; 为什么要用下划线](objc/synthesis)
+    * [2013-4-2 在Muo项目中真正的实验了Objective-C的大部分回调方法](objc/objcDelegateTesting)
 - [Swift](swift/swift-page)
     * [UIGestureRecognizer](swift/UIGestureRecognizer)
 - [xCode](xCode_page)
