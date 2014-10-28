@@ -1,6 +1,6 @@
 在前些天使用了NSNotificationCenter解决了在markdown.xcodeproj项目中遇到不能刷新SideBarViewController的问题之后，今天又遇到了一个类似的问题，这次是点击SideBarViewController但是无法刷新ViewController中的mkNameFile和markdownTextView的问题。记录一下我试验过的方法和思考过程
 
-1. 首先，因为不是Master-Detail或者Modal View的结构，当然最方便的Public iVar首当其冲，但是没有反应
+1.首先，因为不是Master-Detail或者Modal View的结构，当然最方便的Public iVar首当其冲，但是没有反应
 
 ```
 ViewController *viewController = [[ViewController alloc]init];
@@ -29,7 +29,7 @@ viewController.markdownTextView.text = [self openFile:[itemArray objectAtIndex:i
 ```
 @interfaceViewController :UIViewController<SideBarViewControllerDelegate.....>
 @implementationViewController {
-SideBarViewController*sideBarViewController;
+    SideBarViewController*sideBarViewController;
 }
 ```
 
@@ -37,8 +37,8 @@ SideBarViewController*sideBarViewController;
 ```
 - (void)viewDidLoad
 {
-[superviewDidLoad];
-sideBarViewController.sideBarDelegate=self;
+    [superviewDidLoad];
+    sideBarViewController.sideBarDelegate=self;
 }
 ```
 
@@ -47,14 +47,15 @@ sideBarViewController.sideBarDelegate=self;
 ```
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-if ([self.sideBarDelegate respondsToSelector:@selector(editTextContent:)])
-NSLog( @"delegate yes" );
+    if ([self.sideBarDelegate respondsToSelector:@selector(editTextContent:)])
+    NSLog( @"delegate yes" );
 
-if(self.sideBarDelegate) {
-NSLog(@"fire delegate");
-[self.sideBarDelegate editTextContent:[self openFile:[itemArray objectAtIndex:indexPath.row]] mkFileNamePath:[self.itemArray objectAtIndex:indexPath.row] ];
-} else
-NSLog( @"delegate is null" );
+    if(self.sideBarDelegate) {
+        NSLog(@"fire delegate");
+        [self.sideBarDelegate editTextContent:[self openFile:[itemArray objectAtIndex:indexPath.row]] mkFileNamePath:[self.itemArray objectAtIndex:indexPath.row] ];
+    } else
+        NSLog( @"delegate is null" );
+    }
 }
 ```
 
@@ -63,16 +64,17 @@ NSLog( @"delegate is null" );
 ```
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-ViewController*viewController = [[ViewControlleralloc]init];
-self.sideBarDelegate = viewController;
-if([self.sideBarDelegaterespondsToSelector:@selector(editTextContent:)])
-NSLog(@"delegate yes");
+    ViewController*viewController = [[ViewControlleralloc]init];
+    self.sideBarDelegate = viewController;
+    if([self.sideBarDelegaterespondsToSelector:@selector(editTextContent:)])
+    NSLog(@"delegate yes");
 
-if(self.sideBarDelegate) {
-NSLog(@"fire delegate");
-[self.sideBarDelegateeditTextContent:[selfopenFile:[itemArrayobjectAtIndex:indexPath.row]]mkFileNamePath:[self.itemArrayobjectAtIndex:indexPath.row] ];
-}else
-NSLog(@"delegate is null");
+    if(self.sideBarDelegate) {
+        NSLog(@"fire delegate");
+        [self.sideBarDelegateeditTextContent:[selfopenFile:[itemArrayobjectAtIndex:indexPath.row]]mkFileNamePath:[self.itemArrayobjectAtIndex:indexPath.row] ];
+    }else
+        NSLog(@"delegate is null");
+    }
 }
 ```
 ok了
@@ -82,21 +84,21 @@ ok了
 ```
 #pragma mark SideBarViewController Delegate methods
 -(void)editTextContent:(NSString*)textContent mkFileNamePath:(NSString*)mkFileNamePath {
-NSLog(@"received delegate");
-self.markdownTextView.text= textContent;
-[self.markdownTextViewsetNeedsDisplay];
-self.mkNameFile.text= mkFileNamePath;
-[self.mkNameFilesetNeedsDisplay];
+    NSLog(@"received delegate");
+    self.markdownTextView.text= textContent;
+    [self.markdownTextViewsetNeedsDisplay];
+    self.mkNameFile.text= mkFileNamePath;
+    [self.mkNameFilesetNeedsDisplay];
 }
 ```
 
-3. Blocks这个只是开了个头，但是想到无法接收所以就没有实验
+3.Blocks这个只是开了个头，但是想到无法接收所以就没有实验
 ```
 typedefvoid(^SideBarViewControllerCompletionBlock)(NSString*mkFileNamePath,NSString*editTextContent);
 @property(nonatomic,copy) SideBarViewControllerCompletionBlock completionBlock;
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-if(self.completionBlock!=nil)
-self.completionBlock([self.itemArrayobjectAtIndex:indexPath.row],[selfopenFile:[itemArrayobjectAtIndex:indexPath.row]]);
+    if(self.completionBlock!=nil)
+    self.completionBlock([self.itemArrayobjectAtIndex:indexPath.row],[selfopenFile:[itemArrayobjectAtIndex:indexPath.row]]);
 }
 ```
 
