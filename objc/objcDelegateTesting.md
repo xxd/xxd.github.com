@@ -1,6 +1,7 @@
 在前些天使用了NSNotificationCenter解决了在markdown.xcodeproj项目中遇到不能刷新SideBarViewController的问题之后，今天又遇到了一个类似的问题，这次是点击SideBarViewController但是无法刷新ViewController中的mkNameFile和markdownTextView的问题。记录一下我试验过的方法和思考过程
 
 1. 首先，因为不是Master-Detail或者Modal View的结构，当然最方便的Public iVar首当其冲，但是没有反应
+
 ```
 ViewController *viewController = [[ViewController alloc]init];
 viewController.mkNameFile.text = [self.itemArray objectAtIndex:indexPath.row];
