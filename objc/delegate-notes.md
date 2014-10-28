@@ -1,5 +1,5 @@
 1.**DetailViewController.h**
-```
+```ruby
 @class DetailViewController;
 
 @protocol DetailViewControllerDelegate <NSObject>
@@ -11,13 +11,13 @@
 
 @interface DetailViewController : UIViewController <UINavigationBarDelegate>
 {
-	**id <DetailViewControllerDelegate> delegate;**
+	id <DetailViewControllerDelegate> delegate;
 }
-**@property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;**
+@property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
 ```
 
 2.**DetailViewController.m**
-```
+```ruby
 #import "DetailViewController.h"
 @implementation DetailViewController
 @synthesize delegate;
@@ -32,19 +32,19 @@
 ```
 
 3.**MasterViewController.h**
-```
-**#import "DetailViewController.h"**
+```ruby
+#import "DetailViewController.h"
 
-@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, **DetailViewControllerDelegate**>
+@interface MasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate>
 ```
 
 4.**MasterViewController.m**
-```
+```ruby
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"ShowDetail"]) {
 		DetailViewController *controller = segue.destinationViewController;
 		controller.delegate = self;//在需要调用delegate方法的时候调用它
-... 
+............ 
 }
 ```
