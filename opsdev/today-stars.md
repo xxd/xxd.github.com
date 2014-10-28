@@ -11,6 +11,7 @@
 
 ####移动开发
 - [Instagram工程师教你如何改善App的性能](http://www.csdn.net/article/2014-10-05/2821953-instagram-improved-their-apps-performance):介绍了Instagram从扁平化设计中获取灵感来优化app #app性能优化#
+- [[视频合辑] 3 个月系统学习 Android 开发（极客学院）](http://www.jikexueyuan.com/event/android.html?hmsr=manong_tools_androidevent)：每天 10 分钟，从基础知识到实战项目，9 个阶段系统学习 Android 开发。
 
 ####其他开发
 - [《Node.js 包教不包会》](https://github.com/alsotang/node-lessons)：正在收集JS和Node相关的资料
