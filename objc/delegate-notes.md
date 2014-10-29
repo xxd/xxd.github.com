@@ -47,4 +47,27 @@
 		controller.delegate = self; #在需要调用delegate方法的时候调用它
 ............ 
 }
+
+#pragma mark - DetailViewControllerDelegate
+
+- (void)detailViewControllerDidCancel:(DetailViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)detailViewControllerDidClose:(DetailViewController *)controller
+{
+	NSMutableArray *valuesArray = [[[valuesDictionary objectForKey:controller.sectionName] mutableCopy] autorelease];
+	[valuesArray replaceObjectAtIndex:controller.indexInSection withObject:controller.value];
+
+	[valuesDictionary setObject:valuesArray forKey:controller.sectionName];
+
+	// This will cause the table of values to be resorted if necessary.
+	[sortedNames release];
+	sortedNames = nil;
+
+	[self updateTableContents];
+
+	[self dismissModalViewControllerAnimated:YES];
+}
 ```
