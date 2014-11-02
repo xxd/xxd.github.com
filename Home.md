@@ -70,9 +70,27 @@ python -m http.server [port]
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
 - [PostgreSQL](pgsql/pgsql-page)
 
-#### Big Data
-
 #### others
 - [Gollum](gollum)
 - http://wiki.junnan.org
 - [Sublime Text 3](others/SublimeText3)
+
+-------
+
+#### BJJ
+- http://www.wuxiroushu.fr/mma-blog/
+
+###### 侧控(Side Control)
+- [高手常使用的侧向逃脱技术](v.youku.com/v_show/id_XNzM1MzQxNjI4.html)
+
+###### 摔
+- [Jonathan Brookins对 Erik Koch运用的双腿摔](http://www.wuxiroushu.fr/mma-blog/?p=2344&utm_source=rss&utm_medium=rss&utm_campaign=%2525e5%252588%2525a9%2525e7%252594%2525a8%2525e8%2525be%252583%2525e5%2525b0%252591%2525e7%25259a%252584%2525e5%25258a%25259b%2525e9%252587%25258f%2525e6%25259d%2525a5%2525e8%2525bf%252590%2525e7%252594%2525a8%2525e4%2525b8%252580%2525e4%2525b8%2525aatakedown%2525ef%2525bc%252588%2525e6%252591%252594%2525e5%252580%252592%2525ef%2525bc%252589)
+- [single leg takedown的两个门外汉错误](http://mp.weixin.qq.com/s?__biz=MzA3NjAzMzEzOA==&mid=203343807&idx=1&sn=1db19512f97eaccd918852ae1f72e780&scene=2&from=timeline&isappinstalled=0#rd)
+- [柔术选手应该知道的七个摔法](http://mp.weixin.qq.com/s?__biz=MzA3MzYyNjMzOA==&mid=200763298&idx=1&sn=7e1ef339e8c012be988ebbdd49ea2208#rd)
+
+###### 基础训练
+[摔跤、格斗以及柔道增加握力的训练10种方式](http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MzU1Njg2MQ==&appmsgid=200087206&itemidx=1&sign=ace413e7eb45632e0725928a6d0c819b&scene=2&from=timeline&isappinstalled=0#wechat_redirect)
+
+-------
+
+#### Boxing & Thai
