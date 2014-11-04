@@ -13,19 +13,14 @@ top -z -x -1 -<
 ```
 
 ####实现sudo 命令免密码执行
-近期在进行一个自动化脚本时，由于需要在非root 用户下执行，即：sudo -A command/XXX.sh
+近期在进行一个自动化脚本时，由于需要在非root 用户下执行，即：`sudo -A command/XXX.sh`
 此时在正常情况下当脚本执行到sudo时需要手动向控制台输入密码，这里利用环境变量SUDO_ASKPASS来实现免密码执行
-
-1、创建一个密码文件，vim  _PWD_TEMP_ 内容如下
-    echo  yourpassword
-
-2、在脚本中执行sudo 命令之前引入环境变量SUDO_ASKPASS
-    export SUDO_ASKPASS=./_PWD_TEMP_
-
-3、执行命令
-    sudo -A  command/XXX.sh
+1. 创建一个密码文件，vim  _PWD_TEMP_ 内容`echo  yourpassword`
+2. 在脚本中执行sudo 命令之前引入环境变量SUDO_ASKPASS `export SUDO_ASKPASS=./_PWD_TEMP_`
+3. 执行命令 `sudo -A  command/XXX.sh`
 
 #####查看系统中占用端口的进程
+```
 $ netstat -tulnp
 Netstat是很常用的用来查看Linux网络系统的工具之一，这个参数可以背下来：
 -t: 显示TCP链接信息
@@ -34,16 +29,22 @@ Netstat是很常用的用来查看Linux网络系统的工具之一，这个参�
 -n: 直接显示ip，不做名称转换
 -p: 显示相应的进程PID以及名称（要root权限）
 如果要查看关于sockets更详细占用信息等，可以使用lsof工具。
+```
 
 #####Find
-	$ find 对应目录 -name "FILENAME"  -mtime +5  -exec rm -rf {} \; 
-	$ find -type f -size 0 -exec rm -rf {} \;  删除0字节文件
-	$ find / -name *.jpg -exec wc -c {} \;|awk '{print $1}'|awk '{a+=$1}END{print a}'  统计所有jpg的文件的大小
-	$ find ./ccc/* -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法1
-	$ find ./ -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法2
+```
+find 对应目录 -name "FILENAME"  -mtime +5  -exec rm -rf {} \; 
+find -type f -size 0 -exec rm -rf {} \;  删除0字节文件
+find / -name *.jpg -exec wc -c {} \;|awk '{print $1}'|awk '{a+=$1}END{print a}'  统计所有jpg的文件的大小
+find ./ccc/* -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法1
+find ./ -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法2
+```
+
+--------------
 
 #####Grep
 在 Linux 上你可找到 grep, egrep, fgrep 这几个程序, 其差异大致如下: 
+```
 * **grep**: 传统的 grep 程序, 在没有参数的情况下, 只输出符合 RE 字符串之句子. 常见参数如下: 
 -v: 逆反模示, 只输出"不含" RE 字符串之句子. 
 -r: 递归模式, 可同时处理所有层级子目录里的文件. 
@@ -65,19 +66,20 @@ Netstat是很常用的用来查看Linux网络系统的工具之一，这个参�
     - grep 在处理 {n,m} 时, 需用 \{ 与 \} 处理, 但 egrep 则不需. 
 
 * **fgrep**: 不作 RE 处理, 表达式仅作一般字符串处理, 所有 meta 均失去功能
-
---------------
+```
 
 #####tar
 将整个/home/www/images 目录下的文件全部打包为 /home/www/images.tar
-	
-	$ tar -cvf /home/www/images.tar /home/www/images ← 仅打包不压缩
-	$ tar -zcvf /home/www/images.tar.gz /home/www/images ← 打包后gzip压缩
-	$ tar jfvx Python-2.7.tar.bz2 ← 解压bz2
-	$ tar -zxvf /home/images.tar.gz  ←解压
+```
+$ tar -cvf /home/www/images.tar /home/www/images ← 仅打包不压缩
+$ tar -zcvf /home/www/images.tar.gz /home/www/images ← 打包后gzip压缩
+$ tar jfvx Python-2.7.tar.bz2 ← 解压bz2
+$ tar -zxvf /home/images.tar.gz  ←解压
+```
 
 #####cut
 http://www.cnblogs.com/dong008259/archive/2011/12/09/2282679.html
+```
 cut  [-bn] [file] 或 cut [-c] [file]  或  cut [-df] [file]
 主要参数
 -b ：以字节为单位进行分割。这些字节位置将忽略多字节字符边界，除非也指定了 -n 标志。
@@ -106,18 +108,20 @@ lp
 
 $ cat /etc/passwd|head -n 20|cut -d : -f 1,3-5
 以:分割第1，3，4，5列
+```
 
 #####内存计算
->$ free -m
+```
+free -m
 total used free shared buffers cached
 Mem: 2516 1450 1066 0 99 794
 -/+ buffers/cache: 556 1959
 Swap: 4692 0 4692
 free mem: used – buffers – cached = 1450 – 99 – 794 = 557
+```
 
 #####踢人
-    pkill -kill -t tty
-    tty　所踢用户的TTY
+pkill -kill -t tty #踢用户的tty
 
 #####shift用法
 ```ruby
@@ -182,6 +186,7 @@ sed '/^$/d' 註: sed '/\\n/d' 沒有用. XD
 ```
 
 #####DD
+```
   dd命令是不是就是要比文件系统的copy慢?
   $ dd if=ocr of=/dev/raw/raw1
   256977+0 records in
@@ -213,9 +218,10 @@ sed '/^$/d' 註: sed '/\\n/d' 沒有用. XD
   noerror\u1aff出错时不停止　　 
   notrunc\u1aff不截短输出文件　　 
   sync\u1aff将每个输入块填充到ibs个字节\u0cff不足部分用空\u08ffNUL\u09ff字符补齐
-  
-#####记录用户的操作
+```
 
+#####记录用户的操作
+```
 有时候我们需要记录Linux用户的操作记录用于审计\u0cff因此就要避免用户可以自行清除操作日志\u0cff一个简单的方式是使用script功能。
   首先在用户的profile文件中开启记录功能\u1aff
   [banping@linux ~]$ cd /home/banping/
@@ -243,32 +249,38 @@ sed '/^$/d' 註: sed '/\\n/d' 沒有用. XD
   [root@tomcat tmp]# cd test
   [root@tomcat test]# rm 1.txt
   rm: remove regular empty file '1.txt'? y
+```
 
-
-摘自《最牛B的 Linux Shell 命令 系列连载》(http://www.isspy.com/most_useful_linux_commands_4/)
+摘自[《最牛B的 Linux Shell 命令 系列连载》](http://www.isspy.com/most_useful_linux_commands_4/)
 
 大括号在bash里面是一个排列的意义，可以试试这个：
-     $ echo {a,b,c}{a,b,c}{a,b,c}
+```
+$ echo {a,b,c}{a,b,c}{a,b,c}
 将输出三个集合的全排列:
 aaa aab aac aba abb abc aca acb acc
 baa bab bac bba bbb bbc bca bcb bcc
 caa cab cac cba cbb cbc cca ccb ccc
+```
 
 #####清空或创建一个文件
-     $ file.txt
+```
+$ file.txt
 在shell里面是标准输出重定向符，即把（前部个命令的）命令行输出转往一个文件内，但这里没有“前部命令”，输出为空，于是就覆盖（或创建）成一个空文件了。
 
 有些脚本的写法是:>file.txt，因为:是bash默认存在的空函数。
 
 单纯创建文件也可以用$touch file.txt，touch本来是用作修改文件的时间戳，但如果文件不存在，就自动创建了。
+```
 
 #####在午夜的时候执行某命令
-     $ echo cmd | at midnight
+```
+$ echo cmd | at midnight
 说的就是at这个组件，通常跟cron相提并论，不过at主要用于定时一次性任务，而cron定时周期性任务。
 at的参数比较人性化，跟英语语法一样，可以tomorrow, next week之类的，详细的查看手册man at。
+```
 
 #####用diff对比远程文件跟本地文件
-     $ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
+`$ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -`
 
 更友好的显示当前挂载的文件系统
 ```
@@ -344,7 +356,8 @@ $ wget --random-wait -r -p -e robots=off -U Mozilla www.example.com
 ```
 
 #####简易计时器
-     $ time read
+```
+$ time read
 运行命令开始算起，到结束时按一下Enter，就显示出整个过程的时间，精确到ms级别。
 
 time是用来计算一个进程在运行到结束过程耗费多少时间的程序，它的输出通常有三项：
@@ -358,33 +371,39 @@ real指整个程序对真实世界而言运行所需时间，user指程序在用
 read本来是一个读取用户输入的命令，常见用法是read LINE，用户输入并回车后，键入的内容就被保存到$LINE变量内，但在键入回车前，这个命令是一直阻塞的。
 
 可见time read这命令灵活地利用了操作系统的阻塞。用这个命令来测试一壶水多久煮滚应该是不错的。
+```
 
 #####远程关掉一台Windows机器
-	$ net rpc shutdown -I IP_ADDRESS -U username%password
+```
+$ net rpc shutdown -I IP_ADDRESS -U username%password
 Windows平台上的net命令是比较强大的，因为其后台是一个RPC类的系统服务，大家应该看过win下用net use \\ip\ipc$ *这样一个命令建立IPC空连接，入侵主机的事情。
 
 Linux下的net命令是samba组件的程序，通常包含在smbclient内，可以跟windows主机的文件、打印机共享等服务进行通讯，但是也支持rpc命令。
 
 上述命令就是在远程Windows主机上执行了shutdown命令。当然这不一定成功，关系到win主机上面的安全设置。net命令能够控制到win主机就是了。
+```
 
 #####利用中间管道嵌套使用SSH
-	$ ssh -t host_A ssh host_B
+```
+$ ssh -t host_A ssh host_B
 如果目标机器host_B处于比较复杂的网络环境，本机无法直接访问，但另外一台host_A能够访问到host_B，而且也能被本机访问到，那上述命令就解决了方便登录host_B的问题。
 
 #####但理论上这个过程是可以无限嵌套的，比如：
-	$ ssh -t host1 ssh -t host2 ssh -t host3 ssh -t host4 ...
+$ ssh -t host1 ssh -t host2 ssh -t host3 ssh -t host4 ...
 嗯那神马FBI CIA的，有本事来捉我吧～
 
 #####我想知道一台服务器什么时候重启完
 系统管理员最常做的事情是重启系统。但是服务器的重启过程往往得花上好几分钟，什么你的服务器4个scsi卡？16个硬盘？系统是Redhat？还完全安装所有组件？好吧，它重启的时间都够你吃顿饭了，所以我很想知道它什么时候回来。
 
 ping命令有个audible ping参数，-a，当它终于ping通你的服务器时会让小喇叭叫起来。
-
-	$ ping -a IP
+$ ping -a IP
+```
 
 #####检查Gmail新邮件	
-	$ curl -u you@gmail.com --silent "https://mail.google.com/mail/feed/atom" | perl -ne \' print "Subject: $1 " if /<title>(.+?)<\/title>/ && $title++;
+```
+$ curl -u you@gmail.com --silent "https://mail.google.com/mail/feed/atom" | perl -ne \' print "Subject: $1 " if /<title>(.+?)<\/title>/ && $title++;
     $ print "(from $1)\n" if /<email>(.+?)<\/email>/; '
+```
 
 #####linux清空文件方法
 ```
@@ -394,31 +413,33 @@ cat /dev/null > test.txt（文件大小被截为0字节）
 ```
 
 ##### sendmail
-	$ apt-get install sendemail libio-socket-ssl-perl libnet-ssleay-perl
-
-	$ sendemail -s smtp.gmail.com -f luexiaoyw@gmail.com -t xuexiaodong79@gmail.com -u hello -m "A hello from Christans to buddhists via gmail" -xu luexiaoyw -xp pw1234567! -o tls=auto
+```
+$ apt-get install sendemail libio-socket-ssl-perl libnet-ssleay-perl
+$ sendemail -s smtp.gmail.com -f luexiaoyw@gmail.com -t xuexiaodong79@gmail.com -u hello -m "A hello from Christans to buddhists via gmail" -xu luexiaoyw -xp pw1234567! -o tls=auto
+```
 
 #####更改Linux启动时用图形界面还是字符界面
-
+```
 cd /etc
 vi inittab
-
-	将id:5:initdefault: 其中5表示默认图形界面
-	改id:3: initdefault: 3表示字符界面
+将id:5:initdefault: 其中5表示默认图形界面
+改id:3: initdefault: 3表示字符界面
+```
 
 #####禁止在后台使用CTRL-ALT-DELETE重起机器
-<pre>
+```
 cd /etc/inittab
 vi inittab 在文件找到下面一行
 	# Trap CTRL-ALT-DELETE
 	ca::ctrlaltdel:/sbin/shutdown -t3 -r now （注释掉这一行）
-</pre>
+```
 
 ######实现RedHat非正常关机的自动磁盘修复
-
+```
 	先登录到服务器，然后在/etc/sysconfig里增加一个文件autofsck,内容如下：
 	AUTOFSCK_DEF_CHECK=yes
 	PROMPT=yes
+```
 
 ###系统
     # uname -a               # 查看内核/操作系统/CPU信息
