@@ -63,6 +63,7 @@ python -m http.server [port]
 - [用户管理](opsdev/userManager)
 - [Shell Programming Notes](opsdev/shell-Notes)
 - [sed & awk Notes](opsdev/sed-awk-notes)
+- [Grep](opsdev/grep-notes)
 - [git](opsdev/git-notes)
 - [正则表达式](opsdev/regex-notes)
 
