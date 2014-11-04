@@ -1,5 +1,5 @@
 ###常用
-```
+```ruby
 ps aux | sort -nk +4 | tail #内存最多的 10 个运行中的进程
 du -sh * | sort -n
 du -h --max-depth=1 #ncdu可以更方便的达到此效果
