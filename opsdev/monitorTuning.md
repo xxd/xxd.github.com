@@ -40,34 +40,6 @@ find ./ccc/* -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法1
 find ./ -type d -exec mkdir -p ./ddd/{} \; 复制目录结构方法2
 ```
 
---------------
-
-#####Grep
-在 Linux 上你可找到 grep, egrep, fgrep 这几个程序, 其差异大致如下: 
-```
-* **grep**: 传统的 grep 程序, 在没有参数的情况下, 只输出符合 RE 字符串之句子. 常见参数如下: 
--v: 逆反模示, 只输出"不含" RE 字符串之句子. 
--r: 递归模式, 可同时处理所有层级子目录里的文件. 
--q: 静默模式, 不输出任何结果(stderr 除外. 常用以获取 return value, 符合为 true, 否则为 false .) 
--i 不区分大小写（只适用于单字符）。
--w: 整词比对, 类似 \<word\> . 
--n: 同时输出行号. (grep -n "48" data.f) 
--c: 只输出符合比对的行数. 
--l: 只输出符合比对的文件名称. 
--o: 只输出符合 RE 的字符串. (gnu 新版独有, 不见得所有版本都支持.) 
--E: 切换为 egrep . 
--h 查询多文件时不显示文件名。
--s 不显示不存在或无匹配文本的错误信息。同`> /dev/null 2>&1`
--B n：显示grep行以及上边的n行 `dmidecode -t system|grep -B 4 "Serial Number"`
-
-* **egrep**: 为 grep 的扩充版本, 改良了许多传统 grep 不能或不便的操作. 比方说: 
-    - grep 之下不支持 ? 与 + 这两种 modifier, 但 egrep 则可. 
-    - grep 不支持 a|b 或 (abc|xyz) 这类"或一"比对, 但 egrep 则可. 
-    - grep 在处理 {n,m} 时, 需用 \{ 与 \} 处理, 但 egrep 则不需. 
-
-* **fgrep**: 不作 RE 处理, 表达式仅作一般字符串处理, 所有 meta 均失去功能
-```
-
 #####tar
 将整个/home/www/images 目录下的文件全部打包为 /home/www/images.tar
 ```
