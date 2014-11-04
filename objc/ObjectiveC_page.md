@@ -30,6 +30,7 @@
 
 #### 2.@interface和 @property 方式声明变量的区别
 如果还晕就看看：http://stackoverflow.com/questions/14236799/should-i-declare-variables-in-interface-or-using-property-in-objective-c-arc/14236931#14236931
+
 1.在  @interface :NSObject{} 的括号中，当然NSObject 是指一个父类，可以是其他的。
 ```
 @interface GCTurnBasedMatchHelper : NSObject {
