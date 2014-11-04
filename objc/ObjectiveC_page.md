@@ -44,6 +44,7 @@
 ```
 
 那这两种方式有什么区别呢。
+
 1. 只在@interface中定义变量的话，你所定义的变量只能在当前的类中访问，在其他类中是访问不了的；而用@property声明的变量可以在外部访问。
 2.用了@property去声明的变量，可以使用“self.变量名”的方式去读写变量。而用@interface的方式就不可以。
 3.  这里给出一个链接：http://stackoverflow.com/questions/9702258/difference-between-properties-and-variables-in-ios-header-file    里面讲到：  我英语菜，简单翻一下：
