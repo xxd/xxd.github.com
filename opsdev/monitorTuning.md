@@ -1,3 +1,16 @@
+###常用
+```
+ps aux | sort -nk +4 | tail #内存最多的 10 个运行中的进程
+du -sh * | sort -n
+du -h --max-depth=1 #ncdu可以更方便的达到此效果
+chattr +ai -R test
+netstat -anpo | grep php-fpm|wc -l #检查php fastcgi的连接情况
+lsof - p PID / pidof 
+sudo !!
+cp filename{,.bak} #快速备份
+!!:gs/foo/bar #上一条命令，并用 :gs/foo/bar 进行替换操作
+```
+
 ###系统
     # uname -a               # 查看内核/操作系统/CPU信息
     # head -n 1 /etc/issue   # 查看操作系统版本
