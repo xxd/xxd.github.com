@@ -70,6 +70,7 @@ python -m http.server [port]
 #### Database
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
 - [PostgreSQL](pgsql/pgsql-page)
+- [MySQL](pgsql/mysql-page)
 
 #### others
 - [Gollum](gollum)
