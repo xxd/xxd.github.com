@@ -48,13 +48,9 @@
 
 1. 只在@interface中定义变量的话，你所定义的变量只能在当前的类中访问，在其他类中是访问不了的；而用@property声明的变量可以在外部访问。
 2. 用了@property去声明的变量，可以使用“self.变量名”的方式去读写变量。而用@interface的方式就不可以。
-3.  这里给出一个链接：http://stackoverflow.com/questions/9702258/difference-between-properties-and-variables-in-ios-header-file    里面讲到：  我英语菜，简单翻一下：
+3. 这里给出一个链接：http://stackoverflow.com/questions/9702258/difference-between-properties-and-variables-in-ios-header-file 
 
-Defining the variables in the brackets simply declares them instance variables.
-
-在括号中定义一个变量只是简单的声明了一个实例变量（或者叫做成员变量,instance variable，ivar）
-
-声明（和 @synthsize）一个属性会为成员变量生成 getter 和setter方法，根据括号内的标准,在oc中经常用setter和getter 做内存管理，这是很重要的。（例如： 当一个值被赋给这个变量，对象是通过setter函数去分配，修改计数器，并最后释放的）。更高一个层次来说，这种做法也促进了封装，减少了一些不必要的代码。
+在括号中定义一个变量只是简单的声明了一个实例变量（或者叫做成员变量,instance variable，ivar），声明（和 @synthsize）一个属性会为成员变量生成 getter 和setter方法，根据括号内的标准,在oc中经常用setter和getter 做内存管理，这是很重要的。（例如： 当一个值被赋给这个变量，对象是通过setter函数去分配，修改计数器，并最后释放的）。更高一个层次来说，这种做法也促进了封装，减少了一些不必要的代码。
 
 目前苹果（在模板中）建议的方法是这样的：
 ```
