@@ -1,6 +1,11 @@
 ###常用
 ```ruby
 ps aux | sort -nk +4 | tail #内存最多的 10 个运行中的进程
+ps -ef | grep firefox | grep -v grep | cut -c 9-15 | xargs kill -s 9
+kill -s 9 `ps -aux | grep firefox | awk '{print $2}'`  
+pgrep firefox | xargs kill -s 9
+kill -s 9 `pgrep firefox` 
+pkill -９ firefox  
 du -sh * | sort -n
 du -h --max-depth=1 #ncdu可以更方便的达到此效果
 chattr +ai -R test
