@@ -5,15 +5,16 @@
 - MySql的QueryCache想要命中的话`要求查询语句与之前的一模一样，包括大小写必须一致、不能增减空格等等。`包括comment都必须是一样的，因为mysql使用简单的hash来确保的。
 
 ####常用
+- [MySQL常用命令](http://blog.chinaunix.net/uid-26784799-id-3470279.html)：
 ```ruby
 SHOW [GLOBAL | SESSION] VARIABLES [LIKE ' pattern ' | WHERE expr ]; 
 mysql -uroot -p  -e "show full processlist" | grep -v Sleep | sort -k6rn >sort.tmp #如果发现IOWait很高，请查看临时表的生成情况，特别是disk tmp table:
-一条霸气的分析binlog的命令：
+mysql> mysql -uroot -p  -e "show global status like '%tmp%'" #如果发现IOWait很高，请查看临时表的生成情况，特别是disk tmp table
 mysqlbinlog -vv   mysql-bin.000039    |  \
   grep -i -e "^update" -e "^insert" -e "^delete" -e "^replace" -e "^alter"  | \
   cut -c1-100 | tr '[A-Z]' '[a-z]' |  \
   sed -e "s/\t/ /g;s/\`//g;s/(.*$//;s/ set .*$//;s/ as .*$//" | sed -e "s/ where .*$//" |  \
-  sort | uniq -c | sort -nr
+  sort | uniq -c | sort -nr #一条霸气的分析binlog的命令：
 `SELECT ip_country FROM geoip WHERE INET_ATON('174.36.207.186') BETWEEN begin_ip_num AND end_ip_num LIMIT 1;` #INET_ATON() and INET_NTOA()
 ```
 
