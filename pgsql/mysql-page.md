@@ -20,9 +20,55 @@ $ tcpdump -A "dst port 3306" #纯粹Linux相关的(查看3306端口的通信具�
 $ /usr/sbin/tcpdump -i eth0 -s 0 -l -w - dst port 3306 | strings | egrep -i 'SELECT|UPDATE|DELETE|INSERT|SET|COMMIT|ROLLBACK|CREATE|DROP|ALTER|CALL' > /tmp/mysql.tcpdump.log #查询MySQL执行各类CRUD的频率
 ```
 
-####SQL写法
+####SQL写法与调优
 - <insert into … on duplicate key update | replace into 多行数据]] > 笔记：
 ```
 `insert DELAYED into dkv values (1,2,'new 12a'),(1,3,'new 33ba'),(1,4,'new 23222'),(1,6,'new 12333'),(1,8,'new vaaaa'),(1,20,'new vaff'),(1,25,'new vaff') ON DUPLICATE KEY UPDATE val=VALUES(val);`
 `replace into dkv values(1,2,'new 12a'),(1,3,'new 33ba'),(1,4,'new 23222'),(1,6,'new 12333'),(1,8,'new vaaaa'),(1,20,'new vaff'),(1,25,'new vaff');`
+```
+
+- 强制索引 FORCE INDEX(Index_Name)
+```
+SELECT A.*，B.description FROM A LEFT JOIN B FORCE INDEX(Index_4) ON A.name=B.name;
+```
+
+- 强制Join STRAIGHT_JOIN
+```
+SELECT film.film_id, film.title, film.release_year, actor.actor_id FROM sakila.film STRAIGHT_JOIN sakila.film_actor USING(film_id); 
+```
+
+- mysqlsla
+```
+xuexd@li386-141:/mysql/slowlog$ sudo mysqlsla -lt slow /mysql/slowlog/mysql-slow.log
+```
+
+- 主从问题解决
+```
+mysql> Show slave status \G查看Master状态：
+mysql> Show master status;重置Slave（慎用）
+mysql> reset slave;
+Slave出现问题了，先跳过这一条语句（请确认所要跳过的具体内容不会影响后面的同步，确认方法查看Binlog文件）：
+mysql> set global sql_slave_skip_counter=1; (记得先暂停Slave：stop slave; 然后重启Slave：start slave;)   
+```
+
+- BINLOG的删除与查看
+```
+在/etc/mysql/my.cnf中加入:
+expire_logs_days = 10
+
+在运行时修改：
+show binary logs;   
+show variables like '%log%';   
+set global expire_logs_days = 10;
+```
+
+- 手动删除10天前的MySQL binlog日志：
+```
+PURGE MASTER LOGS BEFORE DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY);  
+show master logs;
+```
+
+- 查看方法
+```
+mysqlbinlog /home/xuexd/binlog_tmp/mysql-bin.000016 --user=lxdev |grep DELETE |head -10
 ```
