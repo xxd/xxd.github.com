@@ -16,6 +16,8 @@ mysqlbinlog -vv   mysql-bin.000039    |  \
   sed -e "s/\t/ /g;s/\`//g;s/(.*$//;s/ set .*$//;s/ as .*$//" | sed -e "s/ where .*$//" |  \
   sort | uniq -c | sort -nr #一条霸气的分析binlog的命令：
 `SELECT ip_country FROM geoip WHERE INET_ATON('174.36.207.186') BETWEEN begin_ip_num AND end_ip_num LIMIT 1;` #INET_ATON() and INET_NTOA()
+$ tcpdump -A "dst port 3306" #纯粹Linux相关的(查看3306端口的通信具体内容)
+$ /usr/sbin/tcpdump -i eth0 -s 0 -l -w - dst port 3306 | strings | egrep -i 'SELECT|UPDATE|DELETE|INSERT|SET|COMMIT|ROLLBACK|CREATE|DROP|ALTER|CALL' > /tmp/mysql.tcpdump.log #查询MySQL执行各类CRUD的频率
 ```
 
 ####SQL写法
