@@ -8,3 +8,15 @@
 #### 参考项目：
 BlockDemo.xcodeproj，iOSDiner.xcodeproj
 
+#### 参考文章：
+- 1-7点：根据[在iOS4中使用代码块－基础知识](http://www.cocoachina.com/bbs/read.php?tid=62169)和[在iOS4中使用代码块－代码块设计](http://www.cocoachina.com/bbs/read.php?tid=62174)
+- 7点根据 《iOS_6_by_Tutorials.pdf》P35 Fun with blocks
+- 8，9点根据[Block全覽](https://www.facebook.com/note.php?note_id=456678673346)
+[Block介绍（一）基础](www.dreamingwish.com/frontui/article/default/block介绍（一）基础.html)
+[Block介绍（二）内存管理与其他特性](www.dreamingwish.com/article/block介绍（二）内存管理与其他特性.html)
+[block介绍（三）揭开神秘面纱（上）](www.dreamingwish.com/article/block介绍（三）揭开神秘面纱（上）.html)
+[block介绍（四）揭开神秘面纱（下）](www.dreamingwish.com/article/block介绍（四）揭开神秘面纱（下）.html)
+
+---------
+
+1.
