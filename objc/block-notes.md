@@ -62,6 +62,159 @@ __block int multiplier = 3;
 #如果是一个iVar或者一个method，会报错Capturing 'self' strongly in this block is likely to lead to a retain cycle
 __weak typeof(self) weakSelf = self;或者写成__block  OBJ* blockSelf = self;来防止retain循环
 [_manager addObserver:self block: ^(DBAccount *account) {
-  [weakSelfaccountUpdated:account];
+  [weakSelf accountUpdated:account];
 }];
 ```
+
+3.传入参数，返回结果
+**代码块变量类似函数指针，调用代码块与调用函数相似。不同于函数指针的是，代码块实际上是Objective-C对象，这意味着我们可以像对象一样传递它们。**
+```ruby
+^(int number) {
+  return number * 3;
+};
+
+#例1：传入一个参数，并调用
+int (^triple)(int) = ^(int number) {
+  return number * 3;
+};
+
+int result = triple(2);
+
+#例2：传入两个参数，并调用
+int (^multiply)(int, int) = ^(int x, int y) {
+  return x * y;
+};
+
+int result = multiply(2, 3);
+```
+
+4.给Class设计代码块
+```ruby
+# .h中声明代码块
++ (void)iterateFromOneTo:(int)limit withBlock:(int (^)(int))block;
+# block只是这个method的一个参数，整个block是这样的(int (^)(int))block，返回int类型结果，^后没有名字，传入int类型参数，block是参数名随便取的，以便在method内调用block(i)
+
+#三种使用方法
+#1) .m中实现：
++ (void)iterateFromOneTo:(int)limit withBlock:(int (^)(int))block {
+  for (int i = 1; i <= limit; i++) {
+    int result = block(i);
+    NSLog(@"iteration %d => %d", i, result);
+  }
+}
+
+#2)外部调用：
+[Worker iterateFromOneTo:5 withBlock:^(int number) {
+  return number * 3;
+}];
+
+#3)也可以定义一个block作为参数传入：
+int (^tripler)(int) = ^(int number) {
+  return number * 3;
+};
+
+[Worker iterateFromOneTo:5 withBlock:tripler];
+```
+
+5.善于使用Typedef来整理遍布各处导致混乱的block名称
+```ruby
+#原来我们是这样声明的
++ (void)iterateFromOneTo:(int)limit withBlock:(int (^)(int))block;
+
+#.h中用Typedef来声明代码块，typedef是C语言的一个关键字，其作用可以理解为将一个繁琐的名字起了一个昵称。参考项目: AFHTTPClient+Helper.h和PTBlockEventListener.h
+typedef int (^ComputationBlock)(int);
+@property (nonatomic,copy) ComputationBlock computationBlock;
+# @property后就可以从其他类引用了。因为代码块是对象，你可以像实例变量或属性一样使用它。这里我们将它当作属性使用。参考项目：DetailViewController.h @ TheProject.xcworkspace
++ (void)iterateFromOneTo:(int)limit withBlock:(ComputationBlock)block;
+
+#1).m中实现：
++ (void)iterateFromOneTo:(int)limit withBlock:(ComputationBlock)block {
+  for (int i = 1; i <= limit; i++) {
+    int result = block(i);
+    NSLog(@"iteration %d => %d", i, result);
+  }
+}
+
+#2)外部调用是不变的：
+[Worker iterateFromOneTo:5 withBlock:^(int number) {
+  return number * 3;
+}];
+
+#事实上，你可以使用ComputationBlock在你程序的任何地方，只要import “Worker.h”
+# iOS4的API中有很多类似的typedef，例如，ALAssetsLibrary类定义了下面的方法：
+- (void)assetForURL:(NSURL *)assetURL     
+resultBlock:(ALAssetsLibraryAssetForURLResultBlock)resultBlock
+  failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock
+#这个方法调用两个代码块，一个代码块时找到所需的资源时调用，另一个时没找到时调用。它们的typedef如下：
+typedef void (^ALAssetsLibraryAssetForURLResultBlock)(ALAsset *asset);
+typedef void (^ALAssetsLibraryAccessFailureBlock)(NSError *error);
+```
+
+6.代码块返回值为代码块
+```ruby
+ComputationBlock block = [Worker raisedToPower:2];
+# 代码块分配内存的方法：代码块的生命周期是在栈中开始的，因为在栈中分配内存是比较块的。是栈变量也就意味着它从栈中弹出后就会被销毁。
++ (ComputationBlock)raisedToPower:(int)y {
+  ComputationBlock block = ^(int x) {
+    return (int)pow(x, y);
+  };
+  return [[block copy] autorelease];
+}
+# 在方法中创建了代码块并将它返回。这样创建代码块就是已明确代码块的生存周期了，当我们返回代码块变量后，代码块其实在内存中已经被销毁了。解决办法是在返回之前将代码块从栈中移到堆中。这听起来很复杂，但是实际很简单，只需要简单的对代码块进行copy操作，代码块就会移到堆中。
+```
+
+7.用Block代替Delegate+Protocol《iOS_6_by_Tutorials.pdf》P35 Fun with blocks，代码实践：TheProject.xcworkspace
+```ruby
+# DetailViewController.h中定义和实现
+typedef void (^DetailViewControllerCompletionBlock)(BOOL success);
+@property (nonatomic, copy) DetailViewControllerCompletionBlock completionBlock;
+# 如果没有typedef就要写成下面这样了
+@property (nonatomic, copy) void (^completionBlock)(BOOL success);
+- (void)cancel {
+  if(self.completionBlock!=nil)
+  self.completionBlock(NO,0);
+}
+
+- (void)done {   
+  if(self.completionBlock!=nil)
+  self.completionBlock(YES,3);
+}
+
+TimelineTableViewController.m中回调
+   DetailViewController*detailVC = [[DetailViewControlleralloc]init];
+    detailVC.completionBlock= ^(BOOLsuccess,intnum)
+    {
+        if (success)
+        {
+            number += num;
+            self.navigationItem.title = [NSString stringWithFormat:@"%i",number];
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+```
+
+8. Block中的变量，除了第2点中提到的使用`__block variable`用来修改值
+```ruby
+#import <Foundation/Foundation.h>
+
+int main(int argc, const char * argv[]) {
+  @autoreleasepool {
+    static int outA = 8;
+    int outB = 8;
+    int (^myPtr1) (int) = ^(int a) {return outA*a;};
+    int (^myPtr2) (int) = ^(int a) {return outB*a;};
+    # 在呼叫myPtr之前改變outA和outB的值
+    outA = 5;
+    outA = 5;
+    int result1 = myPtr1(3);# result的值是15，因為outA是個static變數會直接反應其值
+    int result2 = myPtr2(3);
+    NSLog(@"result1:%i",result1);
+    NSLog(@"result2:%i",result2);
+  }
+  return 0;
+}
+# 结果：
+2013-04-22 13:45:47.642 Untitled[16108:707] result1:15
+2013-04-22 13:45:47.642 Untitled[16108:707] result2:24
+```
+
