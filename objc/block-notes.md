@@ -26,4 +26,17 @@ BlockDemo.xcodeproj，iOSDiner.xcodeproj
 
 ---------
 
-1.
+1.最简单的Block可以看做是一组可执行的代码
+```ruby
+^ {
+  NSDate *date = [NSDate date];
+  NSLog(@"The date and time is %@", date);
+};
+# 也可以给上面的Block加个名字以及input和output，就可以用now();来调用了
+void (^now)(void) = ^ {
+  NSDate *date = [NSDate date];
+  NSLog(@"The date and time is %@", date);
+};
+# block名称now，传入void，传出void
+```
+
