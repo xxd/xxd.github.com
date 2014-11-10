@@ -40,3 +40,28 @@ void (^now)(void) = ^ {
 # block名称now，传入void，传出void
 ```
 
+2.与函数不同是代码块能够捕捉到已声明的同一作用域内的变量，代码块是闭包，在代码块声明时就将使用的变量包含到了代码块范围内。
+**#和第一次执行代码块打印出的时间是相同的，只要在程序退出之前，它都是打印最初的日期和时间。这就是闭包的作用域，块内用到的变量做一个只读的备份。但是当你将代码块在不同方法间传递时闭包的特性就会变得十分有用，因为它里面的变量是保持不变的。这也就是为什么Block作为回调会很好用。**
+```ruby
+void (^now)(void) = ^ {
+  NSLog(@"The date and time is %@", date);
+};
+now();
+sleep(5);
+date = [NSDate date];
+now();
+
+#读可以的，但是需要修改的话，需要__block关键字
+
+__block int multiplier = 3;
+[Worker iterateFromOneTo:5 withBlock:^(int number) {
+  multiplier = number * multiplier;
+  return multiplier;
+}];
+
+#如果是一个iVar或者一个method，会报错Capturing 'self' strongly in this block is likely to lead to a retain cycle
+__weak typeof(self) weakSelf = self;或者写成__block  OBJ* blockSelf = self;来防止retain循环
+[_manager addObserver:self block: ^(DBAccount *account) {
+  [weakSelfaccountUpdated:account];
+}];
+```
