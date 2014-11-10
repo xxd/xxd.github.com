@@ -21,6 +21,9 @@
     [self presentViewController:slidingMenuController animated:YES completion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 ```
+    * 自动布局：
+        * http://objccn.io/issue-3-5/ 【iOS7】
+        * http://answerhuang.duapp.com/index.php/2013/12/03/beginning_auto_layout_tutorial_in_ios7/ 【iOS7】
 
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class-import)
