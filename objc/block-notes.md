@@ -218,3 +218,39 @@ int main(int argc, const char * argv[]) {
 2013-04-22 13:45:47.642 Untitled[16108:707] result2:24
 ```
 
+9. Block的生命周期，在第6点中也提到过如果一个block的返回值为一个block，那么需要`return [block copy];`
+```ruby
+#import <Foundation/Foundation.h>
+
+typedef int (^MyBlock)(int);
+MyBlock genBlock();
+int main(int argc, const char * argv[])
+{
+  MyBlock outBlock = genBlock();
+  int result = outBlock(5);       
+  NSLog(@"result is %d",[outBlockretainCount] );
+  NSLog(@"result is %d",result  );       
+  return 0;
+}
+
+MyBlock genBlock() {           
+  int a = 3;           
+  MyBlock inBlock = ^(int n) {return n*a;};
+  return [[inBlock copy] autorelease];# copy指令是為了要把block從stack搬到heap，autorelease是為了平衝retainCount加到autorelease oop，回傳之後等到事件結束就清掉。
+}
+```
+
+10. block数组 Block与dispatch_Quene
+```ruby
+void (^blocks[2])(void) = {
+  ^(void){ NSLog(@" >> This is block 1!"); },
+  ^(void){ NSLog(@" >> This is block 2!"); }
+};
+
+blocks[0]();
+blocks[1]();
+```
+
+11.何时用dispatch_group_async参考 [GCD介绍（二）: 多核心的性能](www.dreamingwish.com/frontui/article/default/gcd介绍（二）-多核心的性能.html)
+
+--EOF--
