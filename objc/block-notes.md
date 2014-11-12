@@ -6,6 +6,47 @@
     - 第二种是可以修改用新关键字 __block 修饰的变量。
 4. 使用方法：
 ```ruby
+# MoreBlockExample.h 定义blocks
+typedef int (^ComputationBlock)(int);
+typedef void (^SmartBlock)(NSString *response);
+
++ (void)iterateFromOneTo:(int)limit withBlock:(ComputationBlock)block;
+//+ (void)smartBlocks:(NSString *)type youSmart:(void (^) (NSString *response))handler;
++ (void)smartBlocks:(NSString *)type youSmart:(SmartBlock)handler;
+
+# MoreBlockExample.m 实现blocks
++ (void)iterateFromOneTo:(int)limit withBlock:(int (^)(int))block {
+    for (int i = 1; i <= limit; i++) {
+        int result = block(i);
+        NSLog(@"iteration %d => %d", i, result);
+    }
+}
+
++ (void)smartBlocks:(NSString *)type youSmart:(void (^) (NSString *response))handler {
+    if ([type compare:@"Pen"] == NSOrderedSame) {
+        handler(@"Ink");
+    }
+    if ([type compare:@"Pencil"] == NSOrderedSame) {
+        handler(@"led");
+    }
+}
+
+# 在其他类中回调
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    //最常见使用代码块的方式是将其传入方法中供方法回调
+    [MoreBlockExample iterateFromOneTo:5 withBlock:^(int number){
+        return  number * 3;
+    }];
+
+    [MoreBlockExample smartBlocks:@"Pen" youSmart:^(NSString *response){
+        NSLog(@"Response:%@", response);
+    }];
+}
+```
+
+```ruby
 # DetailViewController.h定义Block
 typedef void (^DetailViewControllerCompletionBlock)(BOOL success);
 
