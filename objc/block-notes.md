@@ -55,6 +55,56 @@ typedef void (^DetailViewControllerCompletionBlock)(BOOL success);
 }
 ```
 
+```ruby
+# DetailViewController.h定义Block
+typedef void (^DetailViewControllerCompletionBlock)(BOOL success);
+
+@interface DetailViewController : UIViewController
+
+@property (nonatomic, copy) DetailViewControllerCompletionBlock completionBlock;
+
+# DetailViewController.m 赋值
+- (IBAction)cancel:(id)sender
+{
+    if (self.completionBlock != nil) {
+        self.completionBlock(NO);
+    }
+}
+
+- (IBAction)done:(id)sender
+{
+	NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+	[formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+	NSNumber *newValue = [formatter numberFromString:self.textField.text];
+
+	self.itemToEdit.value = (newValue != nil) ? newValue : @0;
+
+    if (self.completionBlock != nil) {
+        self.completionBlock(YES);
+    }
+}
+
+# Master内回调，以前纯代码在点击表格的delegate内回调，现在用了StoryBoard在Segue内回调
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowDetail"]) {
+        DetailViewController *controller = 
+                    segue.destinationViewController;
+
+        controller.completionBlock = ^(BOOL success) {
+            if (success) {
+                // This will cause the table of values to be
+                // resorted if necessary.
+                [_dataModel clearSortedItems];
+
+                [self updateTableContents];
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+............
+}
+```
+
 #### 参考项目：
 BlockDemo.xcodeproj，iOSDiner.xcodeproj
 
