@@ -115,6 +115,10 @@ BlockDemo.xcodeproj，iOSDiner.xcodeproj
 正确的做法（被屏蔽的那段代码）是在将block添加到NSArray中时先copy到heap上，这样就可以在之后的使用中正常访问。在ARC下，对block变量进行copy始终是安全的，无论它是在栈上，还是全局数据段，还是已经拷贝到堆上。对栈上的block进行copy是将它拷贝到堆上；对全局数据段中的block进行copy不会有任何作用；对堆上的block进行copy只是增加它的引用记数。如果栈上的block中引用了__block类型的变量，在将该block拷贝到堆上时也会将__block变量拷贝到堆上如果该__block变量在堆上还没有对应的拷贝的话，否则就增加堆上对应的拷贝的引用记数。
 - 第10点Block数组：根据[[深入浅出Cocoa]多线程编程之block与dispatch quene](www.cnblogs.com/kesalin/archive/2011/08/26/block_dispatch_queue.html)
 
+#### 后续阅读：
+- 何时用dispatch_group_async参考 [GCD介绍（二）: 多核心的性能](www.dreamingwish.com/frontui/article/default/gcd介绍（二）-多核心的性能.html)
+- [Building a Blocks-Based Object System in ⁠(⁠Objective⁠-⁠)⁠C](oleb.net/blog/2013/02/building-blocks-based-object-system-in-objective-c/)
+
 ---------
 
 1.最简单的Block可以看做是一组可执行的代码
@@ -341,7 +345,5 @@ void (^blocks[2])(void) = {
 blocks[0]();
 blocks[1]();
 ```
-
-11.何时用dispatch_group_async参考 [GCD介绍（二）: 多核心的性能](www.dreamingwish.com/frontui/article/default/gcd介绍（二）-多核心的性能.html)
 
 --EOF--
