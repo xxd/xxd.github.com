@@ -35,7 +35,7 @@ typedef void (^SmartBlock)(NSString *response);
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //最常见使用代码块的方式是将其传入方法中供方法回调
+    #最常见使用代码块的方式是将其传入方法中供方法回调
     [MoreBlockExample iterateFromOneTo:5 withBlock:^(int number){
         return  number * 3;
     }];
