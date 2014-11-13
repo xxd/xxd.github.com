@@ -1,4 +1,7 @@
 swift站点：
+   * [苹果官方中卫Swift教程](http://www.cocoachina.com/special/swift/)
+   * [Swift编程语言 FAQ](www.cocoachina.com/swift/20140618/8872.html)
+   * [Swift语言亮点：站在Objective-C开发人员的角度看](www.cocoachina.com/swift/20140609/8728.html)
    * [资料汇总](https://swift.zeef.com/robin.eggenkamp)
    * https://github.com/nettlep/learn-swift playground学习
    * http://www.swiftcast.tv/articles?utm_medium=referral&utm_source=swift.zeef.com%2Frobin.eggenkamp&utm_campaign=ZEEF
