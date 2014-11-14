@@ -44,6 +44,7 @@
 - [xCode](xCode_page)
 - [Android](Android-page)
 - [Sketch](Sketch-page)
+- [推广营销](marketing-page)
 
 #### Ruby and Rails
 - [Ruby](ruby/ruby-notes)
