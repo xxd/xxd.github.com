@@ -7,6 +7,7 @@
 - [MOMO雨松](www.xuanyusong.com )：Unity游戏为主，iOS，Andorid也有很多好文章
 - [今日加星](opsdev/today-stars)
 - [WWDC2014](https://developer.apple.com/videos/wwdc/2014/):改变之后的年就能看以前的了
+- [iOS Developer Library](https://developer.apple.com/library/ios/navigation/#section=Resource%20Types&topic=Getting%20Started)
 
 #### Mobile
 - [iOS](iOS/iOS_page)
