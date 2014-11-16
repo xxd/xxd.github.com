@@ -3,6 +3,7 @@
 - [iOS wiki](http://www.ios-wiki.com)
 - [Cocoa开发者中心](http://d.cocoachina.com)
 - [码农](http://weekly.manong.io)
+- http://answerhuang.duapp.com
 - [MOMO雨松](www.xuanyusong.com )：Unity游戏为主，iOS，Andorid也有很多好文章
 - [今日加星](opsdev/today-stars)
 - [WWDC2014](https://developer.apple.com/videos/wwdc/2014/):改变之后的年就能看以前的了
