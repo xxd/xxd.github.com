@@ -20,7 +20,22 @@
 }
 ```
 
-#### 在iOS中播放GIF动画图片  
+### iOS7适配
+```ruby
+//用于ios7下有关位置偏移问题
+//ios7位置调整
+- (void) viewDidLayoutSubviews {
+ 
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        CGRect viewBounds = self.view.bounds;
+        CGFloat topBarOffset = self.topLayoutGuide.length;
+        viewBounds.origin.y = topBarOffset * -1;
+        self.view.bounds = viewBounds;
+    }
+}
+```
+
+### 在iOS中播放GIF动画图片  
 在 iOS App 中，经常会看到一些动画，比如：音乐播放器App， 那个上下跳动的波浪式的图标。 这个动画在iOS中是如何实现的呢？如果你留意的话，会发现这些动画都是Gif 文件。 我们知道，GIF本身就是一个动画，只要能播这个GIF文件就可以了。iPhone SDK提供了多种动画手段，UIView、UIImageView和CALayer都支持动画。但如何处理常见的gif动画呢？UIWebView提供了答案，代码如下：
 ```ruby
 #使用UIWebView播放
