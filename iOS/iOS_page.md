@@ -20,6 +20,22 @@
 }
 ```
 
+#### 在iOS中播放GIF动画图片  
+在 iOS App 中，经常会看到一些动画，比如：音乐播放器App， 那个上下跳动的波浪式的图标。 这个动画在iOS中是如何实现的呢？如果你留意的话，会发现这些动画都是Gif 文件。 我们知道，GIF本身就是一个动画，只要能播这个GIF文件就可以了。iPhone SDK提供了多种动画手段，UIView、UIImageView和CALayer都支持动画。但如何处理常见的gif动画呢？UIWebView提供了答案，代码如下：
+```ruby
+#使用UIWebView播放
+    // 设定位置和大小
+    CGRect frame = CGRectMake(50,50,0,0);
+    frame.size = [UIImage imageNamed:@"play.gif"].size;
+    // 读取gif图片数据
+    NSData *gif = [NSData dataWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"play" ofType:@"gif"]];
+    // view生成
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.userInteractionEnabled = NO;//用户不可交互
+    [webView loadData:gif MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    [self.view addSubview:webView]; 
+```
+
 ### AppDelegate
 - 如何在其他类调用AppDelegate的东西
 ```ruby
