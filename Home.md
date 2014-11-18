@@ -8,7 +8,8 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
 
 #### Mobile
 - [iOS](iOS/iOS_page)
-    * [UINavigation] (iOS/UINavigation)
+    * [Standford 2013/14 iOS7](iOS/Standford-ios7)
+    * [UINavigation](iOS/UINavigation)
     * [UITableView](iOS/UITableView)
     * [UITableViewCell] (iOS/UITableViewCell)
     * [UIScrollView](iOS/UIScrollView)
