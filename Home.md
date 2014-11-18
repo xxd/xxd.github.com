@@ -3,6 +3,9 @@
 AFNetworking2.0源码解析[<一>](http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=201135642&idx=2&sn=62df690573685460bc673bd86eda17c9#rd)，[<二>](http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=201162562&idx=3&sn=519649bf9c7dff445ab59457417de375#rd)
 * MVVM ReactiveCocoa: [Part 1/2](http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1)，[Part 2/2](http://www.raywenderlich.com/74131/mvvm-tutorial-with-reactivecocoa-part-2)
 * [API Design](mattgemmell.com/api-design/) 
+* [直接拿来用！最火的iOS开源项目（二）](www.csdn.net/article/2013-06-18/2815806-GitHub-iOS-open-source-projects-two/1 )（三）
+* [关于iOS 7的开源项目](www.cocoachina.com/industry/20130701/6515.html )
+* [40个GitHub上最受欢迎的iOS开源项目（一）](www.weste.net/2013/8-1/92975.html)
 
 cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：`pod "MGSplitViewController" , :path => '/Path to your own Repos/MGSplitViewController'`
 
