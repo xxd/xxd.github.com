@@ -1,3 +1,5 @@
+参考：[斯坦福大学iOS7学习笔记](wang9262.github.io/blog/2014/03/01/stanford-ios7-learning/)
+
 ###4.Foundation, Attributed Strings (January 17, 2013)
 ####4.1 Init
 NSObject default的Init：
