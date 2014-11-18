@@ -57,11 +57,12 @@ DynamicBindingDemo.xcodeproj
 ```
 
 ####4.3 Introspection
-isKindOfClass: returns whether an object is that kind of class (inheritance included)
-isMemberOfClass: returns whether an object is that kind of class (no inheritance)
-respondsToSelector: returns whether an object responds to a given method
+* isKindOfClass: returns whether an object is that kind of class (inheritance included)
+* isMemberOfClass: returns whether an object is that kind of class (no inheritance)
+* respondsToSelector: returns whether an object responds to a given method
 Class testing methods take a Class:
-
+```
 if ([obj isKindOfClass:[NSString class]]) {
     NSString *s = [(NSString *)obj stringByAppendingString:@”xyzzy”];
 }
+```
