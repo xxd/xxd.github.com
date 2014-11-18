@@ -1,7 +1,15 @@
-[iOS第三方开源库的吐槽和备忘](http://blog.ibireme.com/2013/09/23/ios-third-party-libs/#more-41361)整理了一份[Github上排名靠前的iOS库](http://github.ibireme.com/github/list/ios/)(大概600个repos)，除了逛一下[每日/每月流行之外](https://github.com/explore)，也可以到这里来看一下[整个iOS Repos的排名](https://github.com/search?l=Objective-C&o=desc&q=stars%3A%3E1&s=stars&type=Repositories)。[唐巧的iOS移动开发周报](www.devtang.com)，[码农周刊](http://weekly.manong.io)和[iOS wiki](http://www.ios-wiki.com)是两个[看新闻和新动向](http://news.ios-wiki.com/news)的好地方，系统的知识点整理要看：[Objcz中国](http://objccn.io)很系统也很深入，看到好的整理到[今日加星](opsdev/today-stars)，不要忘记手册[iOS Developer Library](https://developer.apple.com/library/ios/navigation/#section=Resource%20Types&topic=Getting%20Started)和[WWDC2014](https://developer.apple.com/videos/wwdc/2014/)，看看能不能恢复[博客](http://www.cnblogs.com/buro79xxd/)
-。一些可以常逛逛的blog：[answerhuang](http://answerhuang.duapp.com)的博客：比较乱但是内容挺有价值，[MOMO雨松](www.xuanyusong.com )：Unity游戏为主，iOS，Andorid也有很多好文章，[Cocoa开发者中心](http://d.cocoachina.com)，[ibireme](http://blog.ibireme.com/)的博客；源码[cheddar-ios](https://github.com/nothingmagical/cheddar-ios)
+[iOS第三方开源库的吐槽和备忘](http://blog.ibireme.com/2013/09/23/ios-third-party-libs/#more-41361)整理了一份[Github上排名靠前的iOS库](http://github.ibireme.com/github/list/ios/)(大概600个repos)，除了逛一下[每日/每月流行之外](https://github.com/explore)，也可以到这里来看一下[整个iOS Repos的排名](https://github.com/search?l=Objective-C&o=desc&q=stars%3A%3E1&s=stars&type=Repositories)。[唐巧的iOS移动开发周报](www.devtang.com)，[码农周刊](http://weekly.manong.io)和[iOS wiki](http://www.ios-wiki.com)是两个[看新闻和新动向](http://news.ios-wiki.com/news)的好地方，
+
+- 官方文档：[iOS Developer Library](https://developer.apple.com/library/ios/navigation/#section=Resource%20Types&topic=Getting%20Started)和[WWDC2014](https://developer.apple.com/videos/wwdc/2014/)
+- 知识点整理：[Objcz中国](http://objccn.io)很系统也很深入，看到好的整理到[今日加星](opsdev/today-stars)
+- 常逛的blog：[answerhuang](http://answerhuang.duapp.com)的博客：比较乱但是内容挺有价值，[MOMO雨松](www.xuanyusong.com )：Unity游戏为主，iOS，Andorid也有很多好文章，[Cocoa开发者中心](http://d.cocoachina.com)，[ibireme](http://blog.ibireme.com/)的博客；[sunnyxx的ObjC奇怪写法](http://blog.sunnyxx.com)，看看能不能恢复[博客](http://www.cnblogs.com/buro79xxd/)，最后想经验在Blog上，知识系统在wiki上代码片段在Dash上，笔记在Evernote上或者就在备忘录也行
+- 源码[cheddar-ios](https://github.com/nothingmagical/cheddar-ios)
 AFNetworking2.0源码解析[<一>](http://blog.cnbang.net/tech/2320/)，[<二>](http://blog.cnbang.net/tech/2371/)，[<三>](http://blog.cnbang.net/tech/2416/)；objc与鸭子对象[（上）](blog.sunnyxx.com/2014/08/24/objc-duck/)，[（下）](http://blog.sunnyxx.com/2014/08/26/objc-duck-advanced/)
+
+-------
+
 * MVVM ReactiveCocoa: [Part 1/2](http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1)，[Part 2/2](http://www.raywenderlich.com/74131/mvvm-tutorial-with-reactivecocoa-part-2)
+* 国人写的[Reactive Cocoa Tutorial](http://blog.sunnyxx.com/tags/Reactive%20Cocoa%20Tutorial/)一个系列，很不错
 * [API Design](mattgemmell.com/api-design/) 
 * [直接拿来用！最火的iOS开源项目（二）](www.csdn.net/article/2013-06-18/2815806-GitHub-iOS-open-source-projects-two/1 )（三）
 * [关于iOS 7的开源项目](www.cocoachina.com/industry/20130701/6515.html )
