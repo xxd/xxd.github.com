@@ -1,6 +1,5 @@
-
 ###4.Foundation, Attributed Strings (January 17, 2013)
-####Init
+####4.1 Init
 NSObject default的Init：
 ```
 @implementation MyObject
@@ -27,7 +26,7 @@ NSObject default的Init：
 @end
 ```
 
-####Dynamic Binding 
+####4.2 Dynamic Binding 
 DynamicBindingDemo.xcodeproj
 ```ruby
 @interface Vehicle
@@ -57,7 +56,7 @@ DynamicBindingDemo.xcodeproj
     [(id)hello shoot]; // No warning, but crash
 ```
 
-Introspection
+####4.3 Introspection
 isKindOfClass: returns whether an object is that kind of class (inheritance included)
 isMemberOfClass: returns whether an object is that kind of class (no inheritance)
 respondsToSelector: returns whether an object responds to a given method
