@@ -5,7 +5,7 @@
 - 常逛的blog：[answerhuang](http://answerhuang.duapp.com)的博客：比较乱但是内容挺有价值，[MOMO雨松](www.xuanyusong.com )：Unity游戏为主，iOS，Andorid也有很多好文章，[Cocoa开发者中心](http://d.cocoachina.com)，[ibireme](http://blog.ibireme.com/)的博客；[sunnyxx的ObjC奇怪写法](http://blog.sunnyxx.com)，看看能不能恢复[博客](http://www.cnblogs.com/buro79xxd/)，最后想经验在Blog上，知识系统在wiki上代码片段在Dash上，笔记在Evernote上或者就在备忘录也行；
 - 源码：[cheddar-ios](https://github.com/nothingmagical/cheddar-ios)，
 AFNetworking2.0源码解析[<一>](http://blog.cnbang.net/tech/2320/)，[<二>](http://blog.cnbang.net/tech/2371/)，[<三>](http://blog.cnbang.net/tech/2416/)；
-
+- 发布：[创业收藏：appStore上传苹果应用程序软件发布流程](http://mp.weixin.qq.com/s?__biz=MjM5MTkyNTQyNA==&mid=201576817&idx=1&sn=4eb6344deaafe12412c7b12413bdb0b9&scene=1&key=71812d6c2a037df35a12cf39e67c868bb81fe7cf1cc2eab634af42e88d6b8bc9f5cc9841160ea765c09cb2b43fc3dcb6&ascene=0&uin=MTM5MDg5MjU0MA%3D%3D&devicetype=iMac+MacBookPro11%2C3+OSX+OSX+10.9.5+build(13F34)&version=11020012&pass_ticket=N5lSXxAGhoigASXogr6Eja0ZpJwdEmAIafUK7u8u8hx3q3C7%2BMhR3yhBviXCbEsE)
 -------
 
 * objc与鸭子对象[（上）](blog.sunnyxx.com/2014/08/24/objc-duck/)，[（下）](http://blog.sunnyxx.com/2014/08/26/objc-duck-advanced/)
