@@ -1,0 +1,1 @@
+顺序 awakeFromNib->viewDidload->viewWillLayoutSubviews->viewDidiLayoutSubviews->viewWillAppear->viewDidAppear
