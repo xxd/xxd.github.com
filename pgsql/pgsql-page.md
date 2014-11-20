@@ -182,6 +182,29 @@ SELECT crypt ( 'sathiya', gen_salt('md5') );
 
 ```
 
+在我们的业务量不断增长中 需要我们谨慎的操作数据库, 分享一点心得
+
+一. 碰到需要添加索引，需要用到 CONCURRENTLY， 可以避免锁的问题
+
+> create index CONCURRENTLY idx_table_names_titem_uid on table_names(titem_uid)
+
+文档可以见： http://www.postgresql.org/docs/9.1/static/sql-createindex.html
+
+二. 有时我们会 去执行一些费时耗数据库的任务 有时会发现 某一个任务 还在暗地里执行着 需要我们 手动的 关闭 该任务
+
+如果你是 kill 对应的pid ，你很有可能会出现 数据库的问题 保险的做法是 用 PG_CANCEL_BACKEND,通过 如下查找对应的PID
+
+> select pid, trim(starttime) as start, duration, trim(user_name) as user,substring (query,1,40) as querytxt from stv_recents where status = 'Running';
+
+查看
+> select pg_cancel_backend(802);
+
+通过如下 杀掉 任务
+
+> pg_cancel_backend( pid )
+
+可以见文档： http://docs.aws.amazon.com/redshift/latest/dg/PG_CANCEL_BACKEND.html
+
 ------
 
 ### Pgdb数据清除：
