@@ -60,6 +60,7 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
 - [推广营销](marketing-page)
 
 #### Ruby and Rails
+看Rails for Zombie，详细了解一下4的变化，参考笔记 Rails4 學習心得整理 [(上)](blog.hellolucky.info/articles/ruby-on-rails-rails4-learning-experience-finishing-rails-4-zombie-outlaws-1/)，[(下)](blog.hellolucky.info/articles/ruby-on-rails-rails4-learning-experience-finishing-rails-4-zombie-outlaws-2/)
 - [Ruby](ruby/ruby-notes)
 - [Rails](ruby/rails-notes)
     * [Rails环境部署](rails/rails-env)
