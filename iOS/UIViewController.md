@@ -28,7 +28,7 @@ awakeFromNib(storyboard) 在storyboard的输出口被设置之前调用，所以
 > 在iOS 6以前内存警告释放view后，会重新loadView，调用viewDidLoad。注意：这里只是UIViewController自己加载view并初始化层次结构，位置后。最终view的大小会在view添加到屏幕上面后重新计算，在viewWillAppear中的view.bounds才是最终的大小。比如，UIViewController被添加到UINavigationController时，其view的高度可能（请思考为什么是可能？）需要减去navigationBar的高度，但是这里还没有进行此操作。
 
 4.view{Will, Did}LayoutSubviews;
-- (void)view{Will, Did}LayoutSubviews; iOS7 auto Lay out的方法
+`- (void)view{Will, Did}LayoutSubviews;` iOS7 auto Lay out的方法
 在layoutSubviews方法调用后执行，当view.bounds变化时，会触发该方法重新计算布局。
 
 5.viewWillAppear
@@ -47,16 +47,16 @@ view即将显示（添加到当前window的view hierarchy 结构）。此时view
 
 几个流程：
 1.初始化UIViewController
-1. - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
-2. - loadView
-3. - viewDidLoad
+1. `- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;`
+2. `- loadView`
+3. `- viewDidLoad`
 
 
 2.显示UIViewController - viewWillAppear
-1. - viewWillLayoutSubviews
-2. - viewDidLayoutSubviews
-3. - viewDidAppear
+1. `- viewWillLayoutSubviews`
+2. `- viewDidLayoutSubviews`
+3. `- viewDidAppear`
 
 3.收到内存警告
-1. - didReceiveMemoryWarning
-2. - viewDidUnload
+1. `- didReceiveMemoryWarning`
+2. `- viewDidUnload`
