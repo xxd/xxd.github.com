@@ -47,16 +47,19 @@ view即将显示（添加到当前window的view hierarchy 结构）。此时view
 
 几个流程：
 1.初始化UIViewController
+
 1. `- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;`
 2. `- loadView`
 3. `- viewDidLoad`
 
 
 2.显示UIViewController - viewWillAppear
+
 1. `- viewWillLayoutSubviews`
 2. `- viewDidLayoutSubviews`
 3. `- viewDidAppear`
 
 3.收到内存警告
+
 1. `- didReceiveMemoryWarning`
 2. `- viewDidUnload`
