@@ -1,5 +1,5 @@
 参考：
-* [斯坦福大学iOS7学习笔记](wang9262.github.io/blog/2014/03/01/stanford-ios7-learning/)
+* [斯坦福大学iOS7学习笔记](http://wang9262.github.io/blog/2014/03/01/stanford-ios7-learning/)
 * [斯坦福iOS7公开课笔记及演示Demo](http://www.cnblogs.com/colinhou)
 * [斯坦福iOS6笔记](http://starbugs.diandian.com)
 
