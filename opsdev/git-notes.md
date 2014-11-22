@@ -1,4 +1,5 @@
 - [githug](https://github.com/Gazler/githug)
 - [理解git常用命令原理](https://codemacro.com/2014/09/09/understand-git/)
 - [一张图理解 Git 对象模型](https://ruby-china.org/topics/20723)
-- [免费电子书《Pro Git》第二版发布 (Scott Chacon)  ](git-scm.com/book/en/v2)
+- [免费电子书《Pro Git》第二版发布 (Scott Chacon)](http://git-scm.com/book/en/v2)
+- [GitHub秘籍](http://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html)
