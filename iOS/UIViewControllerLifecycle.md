@@ -79,7 +79,8 @@ will的did版本。在view显示之后使用。整个view已经添加到屏幕�
 注意iOS 6后，收到内存警告后，view不会被释放，viewDidUnload也不会被调用。系统会释放view中包含的一些内容，具体自己debug一下？也可以飘过不用关心。在didReceiveMemoryWarning你可以释放一些可以重生的业务数据。
 低内存的时候，系统会卸载你的view，将会把你的controller的view从内存中清除出去，也就是停止所有有strong指向的指针。但是对应的viewController是不会从heap清除出去的。但是，还是要把其他的outlet指针都设置为nil，因为，就怕其他的view有指向这个类型的strong指针，所以就不太一样了。所以要养成好习惯，把outlet型的指针设置为nil。
 
-所以自己最好释放一下view【但是viewDidUnload在iOS6以后就不支持了所以还是用这个吗？看看其他的源码吧】
+iOS6以前最好释放一下view，iOS6之后就不需要了，系统会自动帮我们完成【对于iOS6，你不需要做任何以前viewDidUnload的事情，更不需要把以前viewDidUnload的代码移动到 didReceiveMemoryWarning方法中。但是考虑到一般现在的应用还需要兼容iOS5, 所以这些代码暂时还需要在viewDidUnload中有（但不需要移到didReceiveMemoryWarning中）。等大家都只支持iOS6了，就可以不写这些代码了。
+】
 ```
 - (void)viewDidUnload {
   self.faceView =nil;
