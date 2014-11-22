@@ -1,4 +1,4 @@
-[View controller的生命周期](iOS/UIViewControllerLifecycle):Standford 13-14的5.View Controller Lifecycle 45:00笔记
+[View controller的生命周期](UIViewControllerLifecycle):Standford 13-14的5.View Controller Lifecycle 45:00笔记
 
 ####顺序 
 **Instantiated(from storyboard) -> awakeFromNib -> outlets get set -> viewDidload -> viewWillLayoutSubviews -> viewDidiLayoutSubviews -> viewWillAppear-> viewDidAppear -> 如果发生rotation-> viewWillLayoutSubviews -> viewDidiLayoutSubviews -> viewWillDisappear -> viewDidDisappear**
