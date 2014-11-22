@@ -18,15 +18,29 @@ awakeFromNib(storyboard) 在storyboard的输出口被设置之前调用，所以
 * before the MVC is loaded
 
 1.init 初始化
+
 - 从xib中加载会调用此方法，如果只是init，也会调用此方法从main bundle中加载与当前ViewController同名的xib文件 `- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;`
 - 从storyboard中加载时会调用该方法 `- (id)initWithCoder:(NSCoder *)aDecoder`
 
-2.loadView
+2.`- (void)loadView`
+
 从xib或者storyboard中加载view，也可以重载loadView初始化view。
 
-3.viewDidLoad
-在loadView后调用，可在此进行一些初始化操作。
-> 在iOS 6以前内存警告释放view后，会重新loadView，调用viewDidLoad。注意：这里只是UIViewController自己加载view并初始化层次结构，位置后。最终view的大小会在view添加到屏幕上面后重新计算，在viewWillAppear中的view.bounds才是最终的大小。比如，UIViewController被添加到UINavigationController时，其view的高度可能（请思考为什么是可能？）需要减去navigationBar的高度，但是这里还没有进行此操作。
+3.`- (void)viewDidLoad;`
+
+**这个方法只会在view启动的时候调用一次**
+
+到这一步已经完成的
+- ViewController已经完全好了，自己加载view并初始化层次结构，位置后
+- storyboard的outlet也已经连接好了。但是还没有在屏幕上显示出来。这个方法里面可以放很多设置的代码。
+
+这一步还没有完成的
+- geometry code还没有完成，只是还不能够确定app试运行在一个iPhone 5或者6或者iPad上，所以view的bounds还没有，这些设置要去下一步`- (void)viewWillAppear:(BOOL)animated;`中的view.bounds才是最终的大小。先load，再appear嘛。
+- 比如，UIViewController被添加到UINavigationController时，其view的高度可能（请思考为什么是可能？）需要减去navigationBar的高度，但是这里还没有进行此操作。
+
+> 在iOS 6以前内存警告释放view后，会重新loadView，调用viewDidLoad。
+
+`- (void)viewWillAppear:(BOOL)animated;`
 
 4.view{Will, Did}LayoutSubviews;
 `- (void)view{Will, Did}LayoutSubviews;` iOS7 auto Lay out的方法
