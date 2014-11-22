@@ -3,6 +3,7 @@
 UIViewController是MVC中的Controller，负责管理每个窗口界面的视图和数据
 
 我面试喜欢问的问题：
+
 1. loadView, viewDidLoad, viewWillAppear的调用顺序? `就是这个顺序`
 2. viewDidLoad会在什么时候调用?会调用几次? `加载的时候调用，仅一次`
 3. viewDidUnload会在什么时候调用？iOS6上怎么处理内存警告? `view释放后调用此方法，iOS5以后就不用了`
