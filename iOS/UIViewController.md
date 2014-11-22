@@ -12,8 +12,8 @@ UIViewController是MVC中的Controller，负责管理每个窗口界面的视图
 
 如果你能够回答完上述所有问题，可以不用往下看了:)
 
-#### View controller的生命周期
-**顺序 awakeFromNib -> viewDidload -> viewWillLayoutSubviews(iOS7) -> viewDidiLayoutSubviews(iOS7) -> viewWillAppear-> viewDidAppear**
+#### View controller的生命周期 45:00
+**顺序 Instantiated(from storyboard) -> awakeFromNib -> outlets get set -> viewDidload -> viewWillLayoutSubviews -> viewDidiLayoutSubviews -> viewWillAppear-> viewDidAppear -> 如果发生rotation-> viewWillLayoutSubviews -> viewDidiLayoutSubviews -> viewWillDisappear -> viewDidDisappear**
 
 0.`- (void)loadView`
 
