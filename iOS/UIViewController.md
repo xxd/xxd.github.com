@@ -15,22 +15,33 @@ UIViewController是MVC中的Controller，负责管理每个窗口界面的视图
 #### View controller的生命周期
 **顺序 awakeFromNib -> viewDidload -> viewWillLayoutSubviews(iOS7) -> viewDidiLayoutSubviews(iOS7) -> viewWillAppear-> viewDidAppear**
 
-0.`awakeFromNib`(storyboard) 在storyboard的输出口被设置之前调用，所以这里只能做一些必须要在
-这个方法用的时候，outlet还没有连接起来，是view Controller刚从storyboard建的时候，没有完全建好，不过可能有一些事情要在这个方法里面完成，比如splitViewDelegate，需要在非常早期完成。
-* before the MVC is loaded
-
-1.init 初始化
-
-- 从xib中加载会调用此方法，如果只是init，也会调用此方法从main bundle中加载与当前ViewController同名的xib文件 `- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;`
-- 从storyboard中加载时会调用该方法 `- (id)initWithCoder:(NSCoder *)aDecoder`
-
-2.`- (void)loadView`
+0.`- (void)loadView`
 
 从xib或者storyboard中加载view，也可以重载loadView初始化view。
 永远不要主动调用这个函数。view controller会在view的property被请求并且当前view值为nil时调用这个函数。如果你手动创建view，你应该重载这个函数。如 果你用IB创建view并初始化view controller，那就意味着你使用initWithNibName:bundle:方法，这时，你不应该重载loadView函数。
 > 这个方法的默认实现是这样：先寻找有关可用的nib文件的信息，根据这个信息来加载nib文件，如果没有有关nib文件的信息，默认实现会创建一个空白的UIView对象，然后让这个对象成为controller的主view。
 所以，重载这个函数时，你也应该这么做。并把子类的view赋给view属性(property)（你create的view必须是唯一的实例，并且不被其他任何controller共享），而且你重载的这个函数不应该调用super。
 如果你要进行进一步初始化你的views，你应该在viewDidLoad函数中去做。在iOS 3.0以及更高版本中，你应该重载viewDidUnload函数来释放任何对view的引用或者它里面的内容（子view等等）。
+
+1.init 初始化
+
+- 从xib中加载会调用此方法，如果只是init，也会调用此方法从main bundle中加载与当前ViewController同名的xib文件 `- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;`
+- 从storyboard中加载时会调用该方法 `- (id)initWithCoder:(NSCoder *)aDecoder`
+
+2.`- (void)awakeFromNib`(storyboard) 
+
+* before the MVC is loaded，在storyboard的输出口被设置之前调用，所以这里只能做一些必须要在这个方法用的时候
+* outlet还没有连接起来，是view Controller刚从storyboard建的时候，没有完全建好，不过可能有一些事情要在这个方法里面完成，比如splitViewDelegate，需要在非常早期完成。
+* Standford 13-14的5.View Controller Lifecycle 44:00左右的时候介绍了这两个init和awakeFromNib方法，基本上大多数的事情都要在viewDidLoad中完成，但是如果要用到这两个方法其中的一个那么需要同时在这两个方法内都执行。比如
+```
+- (void)setup {...do something can;t wait until viewDidLoad...};
+- (void)awakeFromNib { [self setup] };
+(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+  self = [super initWithNibName:name bundle:bundle];
+  [self setup]; 
+  return self;
+};
+```
 
 3.`- (void)viewDidLoad;`
 
