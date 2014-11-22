@@ -25,6 +25,13 @@ awakeFromNib(storyboard) 在storyboard的输出口被设置之前调用，所以
 2.`- (void)loadView`
 
 从xib或者storyboard中加载view，也可以重载loadView初始化view。
+永远不要主动调用这个函数。view controller会在view的property被请求并且当前view值为nil时调用这个函数。如果你手动创建view，你应该重载这个函数。如 果你用IB创建view并初始化view controller，那就意味着你使用initWithNibName:bundle:方法，这时，你不应该重载loadView函数。
+> 这个方法的默认实现是这样：先寻找有关可用的nib文件的信息，根据这个信息来加载nib文件，如果没有有关nib文件的信息，默认实现会创建一个空白的UIView对象，然后让这个对象成为controller的主view。
+所以，重载这个函数时，你也应该这么做。并把子类的view赋给view属性(property)（你create的view必须是唯一的实例，并且不被其他任何controller共享），而且你重载的这个函数不应该调用super。
+如果你要进行进一步初始化你的views，你应该在viewDidLoad函数中去做。在iOS 3.0以及更高版本中，你应该重载viewDidUnload函数来释放任何对view的引用或者它里面的内容（子view等等）。
+
+`- (void)awakeFromNib;`
+这个方法用的时候，outlet还没有连接起来，是view Controller刚从storyboard建的时候，没有完全建好，不过可能有一些事情要在这个方法里面完成，比如splitViewDelegate，需要在非常早期完成。
 
 3.`- (void)viewDidLoad;`
 
@@ -40,11 +47,32 @@ awakeFromNib(storyboard) 在storyboard的输出口被设置之前调用，所以
 
 > 在iOS 6以前内存警告释放view后，会重新loadView，调用viewDidLoad。
 
-`- (void)viewWillAppear:(BOOL)animated;`
+4.`- (void)viewWillAppear:(BOOL)animated;`
 
-4.view{Will, Did}LayoutSubviews;
-`- (void)view{Will, Did}LayoutSubviews;` iOS7 auto Lay out的方法
+- 这个方法调用的时候，bounds已经有了。
+- 你的视图只会loaded一次，但是会appear或者disappear很多次。所以不变的东西，放在viewDidLoad里面。和几何相关的，放在viewWillAppear里面。这点对项目的优化很重要。就好似顶层的view，旋转ipad什么的都需要改变顶层的view的大小，当一个view controller的生命周期到这里的时候，就可以在这里的最后时刻来调整view的排列或者几何特性。
+- 这里也设置做一些lazy execution for performance.比如：需要按一个button，出现一个view什么的。这里设置，开销很大。耗时很长的事情最好在viewWillAppear里另开一个线程运行，然后在view里面放一个小小的spinning wheel。
+
+`- (void)viewWillDisappear:(BOOL)animated`
+```
+- (void)viewWillDisappear:(BOOL)animated
+{
+       [superviewWillDisappear:animated];
+       [selfrememberScrollPosition];
+       [selfsaveDataToPermanentStore];
+}
+```
+这个方法当然是要消失的时候啦。要消失的时候，还是记得现在的运行情况的。所以可以记得scroll的position啦。但是，不要在这个方法里面写太多的东西哦，app会崩溃的。
+
+另开线程来处理任何UI的改变，或者如果是不怎么废资源的话就直接写入硬盘。
+
+`- (void)viewDid{Dis}Appear:(BOOL)animated;`
+will的did版本。在view显示之后使用。
+
+4.`- (void)view{Will, Did}LayoutSubviews;`
 在layoutSubviews方法调用后执行，当view.bounds变化时，会触发该方法重新计算布局。
+在由frame的改变而触发输出subview之前，这个方法被调用
+比如，在autorotation后，布局发生改变，此时可以设置subview的布局。
 
 5.viewWillAppear
 view即将显示（添加到当前window的view hierarchy 结构）。此时view.bounds已经被重新计算为合适的结果了。如果你需要根据view的高度设置某些控件的高度，这里可以开始动手了。
@@ -59,6 +87,14 @@ view即将显示（添加到当前window的view hierarchy 结构）。此时view
 8.didReceiveMemoryWarning
 > 程序收到内存警告时，调用此方法，默认会释放self.view，如果其没有superview。
 注意iOS 6后，收到内存警告后，view不会被释放，viewDidUnload也不会被调用。系统会释放view中包含的一些内容，具体自己debug一下？也可以飘过不用关心。在didReceiveMemoryWarning你可以释放一些可以重生的业务数据。
+低内存的时候，系统会卸载你的view，将会把你的controller的view从内存中清除出去，也就是停止所有有strong指向的指针。但是对应的viewController是不会从heap清除出去的。但是，还是要把其他的outlet指针都设置为nil，因为，就怕其他的view有指向这个类型的strong指针，所以就不太一样了。所以要养成好习惯，把outlet型的指针设置为nil。
+
+所以自己最好释放一下view【但是viewDidUnload在iOS6以后就不支持了所以还是用这个吗？看看其他的源码吧】
+```
+- (void)viewDidUnload {
+  self.faceView =nil;
+}
+```
 
 几个流程：
 1.初始化UIViewController
