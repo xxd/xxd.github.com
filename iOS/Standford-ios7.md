@@ -71,3 +71,10 @@ if ([obj isKindOfClass:[NSString class]]) {
     NSString *s = [(NSString *)obj stringByAppendingString:@”xyzzy”];
 }
 ```
+
+###5.View Controller Lifecycle 
+- [UIViewController](iOS/UIViewController)
+- [View controller的生命周期](UIViewControllerLifecycle)
+
+###6.Polymorphism with Controllers, UINavigation, UITabBar
+
