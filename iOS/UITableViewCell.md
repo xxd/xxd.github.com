@@ -24,6 +24,7 @@
 上面两个成员变量，portrain是个UIImage,name是个NSString。用着API很容易的就写出了。界面也很easy的就画上去了。不过这时的cell中的内容都是重复的，上面出现过一次下面再次显示。
 后来一打听，才知道cell用draw的这种方法绘制，必须自己刷新。思考一下也对，自己画了就得自己刷新。平时用控件addsubview不用考虑这些，是因为控件内部有相应的机制，只要你改上面显示的内容它就会自动刷新。
 解决方法有两种：
+
 1. 在`- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath`里，return cell之前加上`[cell setNeedsDisplay];`
 2. 在相当属性的set方法中加上刷新的代码，比如
 
