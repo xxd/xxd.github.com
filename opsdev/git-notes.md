@@ -3,3 +3,8 @@
 - [一张图理解 Git 对象模型](https://ruby-china.org/topics/20723)
 - [免费电子书《Pro Git》第二版发布 (Scott Chacon)](http://git-scm.com/book/en/v2)
 - [GitHub秘籍](http://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html)
+
+```ruby
+git reset --hard HEAD #删除当前working和staging的所有修改，回退倒Master
+git reset --hard HEAD^ #删除当前working和staging和Master的所有修改，回退到Master-1
+```
