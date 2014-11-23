@@ -27,7 +27,6 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
     * [UITableView](iOS/UITableView)
     * [UITableViewCell] (iOS/UITableViewCell)
     * [UIScrollView](iOS/UIScrollView)
-    * [UIGestureRecognizer](iOS/UIGestureRecognizer)
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
     * [NSFileManager] (iOS/NSFileManager)
