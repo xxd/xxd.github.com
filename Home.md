@@ -70,6 +70,8 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
     * [在Aliyun上快速部署Ruby on Rails](https://ruby-china.org/topics/17553)
     * Gem
         * [Grape](ruby/grape-notes)：写API
+        * [Capistrano](ruby/capistrano-notes)
+
 - [30款最好的 Bootstrap 3.0 免费主题和模板](www.cnblogs.com/lhb25/p/30-free-bootstrap-templates.html)
 
 #### Python
