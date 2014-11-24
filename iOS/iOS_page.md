@@ -1,3 +1,6 @@
+教程
+- [iOS8 Day-by-Day](http://www.shinobicontrols.com/blog/posts/2014/07/16/ios8-day-by-day-index)
+
 源码
 - [Path 4.0的弹出菜单--DCPathButton](http://code.cocoachina.com/detail/232180)
 - [PDF文件浏览和阅读--Reader](http://code.cocoachina.com/detail/232162)
