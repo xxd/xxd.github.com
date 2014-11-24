@@ -1,3 +1,11 @@
+* objc与鸭子对象[（上）](http://blog.sunnyxx.com/2014/08/24/objc-duck/)，[（下）](http://blog.sunnyxx.com/2014/08/26/objc-duck-advanced/)，看了看没看懂 -.-||| 【www】
+* MVVM ReactiveCocoa: [Part 1/2](http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1)，[Part 2/2](http://www.raywenderlich.com/74131/mvvm-tutorial-with-reactivecocoa-part-2)【www】
+* 国人写的[Reactive Cocoa Tutorial](http://blog.sunnyxx.com/tags/Reactive%20Cocoa%20Tutorial/)一个系列，很不错 【www】
+* [API Design](mattgemmell.com/api-design/) 【www】
+* [直接拿来用！最火的iOS开源项目（二）](www.csdn.net/article/2013-06-18/2815806-GitHub-iOS-open-source-projects-two/1 )（三）【www】
+* [关于iOS 7的开源项目](www.cocoachina.com/industry/20130701/6515.html )【www】
+* [40个GitHub上最受欢迎的iOS开源项目（一）](www.weste.net/2013/8-1/92975.html)【www】
+
 教程
 - [iOS8 Day-by-Day](http://www.shinobicontrols.com/blog/posts/2014/07/16/ios8-day-by-day-index)
 - [iOS7 Day-by-Day](http://www.shinobicontrols.com/blog/posts/2013/09/19/introducing-ios7-day-by-day/)
