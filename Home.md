@@ -1,7 +1,5 @@
 #### Mobile
 - [iOS](iOS/iOS_page)
-    * [Standford 2013/14 iOS7](iOS/Standford-ios7)
-    * [UIViewController](iOS/UIViewController)
     * [UINavigation](iOS/UINavigation)
     * [UITableView](iOS/UITableView)
     * [UITableViewCell] (iOS/UITableViewCell)
@@ -9,12 +7,6 @@
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
     * [NSFileManager] (iOS/NSFileManager)
-    * modalViewController & dismissModalViewControllerAnimated" iOS 6.0以后 is deprecated 而采用presentedViewController，写法如下
-```ruby
-    testViewController *testVC = [[testViewController alloc] init];
-    [self presentViewController:slidingMenuController animated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
-```
     * 自动布局：
         * http://objccn.io/issue-3-5/ 【iOS7】
         * http://answerhuang.duapp.com/index.php/2013/12/03/beginning_auto_layout_tutorial_in_ios7/ 【iOS7】
