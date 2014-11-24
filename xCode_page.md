@@ -2,6 +2,19 @@
 - [使用Xcode和Instruments调试解决iOS内存泄露](http://blog.csdn.net/totogo2010/article/details/8233565)
 - [xCode5：资源管理，Asset Catalog和Image Slicing，Modules解释](http://onevcat.com/2013/06/new-in-xcode5-and-objc/)
 
+### 选择Xcode版本打包发布App
+
+如何你和我一样手贱安装了Xcode6，同时又需要发布应用到商店时，你会发现打好的包是通不过审核的。验证报错：
+
+    unable to validate application archives of type:0x0
+
+Google报错信息后，发现Beta版的Xcode打的包是不能发布到商店的。这时候即使你启用原来的Xcode5去打包，打出来的包也会报错的。这是因为安装Xcode6Beta以后，本地的命令行工具已经被换成了最新的。
+
+解决的办法如下：通过xcode-select 指定命令行工具版本。
+
+    sudo xcode-select --switch /Applications/Xcode.app
+然后使用Xcode5打包即可。
+
 ### Themes
 ```ruby
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes;
