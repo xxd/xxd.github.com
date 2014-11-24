@@ -1,17 +1,3 @@
-
-
--------
-
-* objc与鸭子对象[（上）](http://blog.sunnyxx.com/2014/08/24/objc-duck/)，[（下）](http://blog.sunnyxx.com/2014/08/26/objc-duck-advanced/)，看了看没看懂 -.-||| 【www】
-* MVVM ReactiveCocoa: [Part 1/2](http://www.raywenderlich.com/74106/mvvm-tutorial-with-reactivecocoa-part-1)，[Part 2/2](http://www.raywenderlich.com/74131/mvvm-tutorial-with-reactivecocoa-part-2)【www】
-* 国人写的[Reactive Cocoa Tutorial](http://blog.sunnyxx.com/tags/Reactive%20Cocoa%20Tutorial/)一个系列，很不错 【www】
-* [API Design](mattgemmell.com/api-design/) 【www】
-* [直接拿来用！最火的iOS开源项目（二）](www.csdn.net/article/2013-06-18/2815806-GitHub-iOS-open-source-projects-two/1 )（三）【www】
-* [关于iOS 7的开源项目](www.cocoachina.com/industry/20130701/6515.html )【www】
-* [40个GitHub上最受欢迎的iOS开源项目（一）](www.weste.net/2013/8-1/92975.html)【www】
-
-cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：`pod "MGSplitViewController" , :path => '/Path to your own Repos/MGSplitViewController'`
-
 #### Mobile
 - [iOS](iOS/iOS_page)
     * [Standford 2013/14 iOS7](iOS/Standford-ios7)
@@ -51,6 +37,7 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
 - [Android](Android-page)
 - [Sketch](Sketch-page)
 - [推广营销](marketing-page)
+cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：`pod "MGSplitViewController" , :path => '/Path to your own Repos/MGSplitViewController'`
 
 #### Ruby and Rails
 看Rails for Zombie，详细了解一下4的变化，参考笔记 Rails4 學習心得整理 [(上)](blog.hellolucky.info/articles/ruby-on-rails-rails4-learning-experience-finishing-rails-4-zombie-outlaws-1/)，[(下)](blog.hellolucky.info/articles/ruby-on-rails-rails4-learning-experience-finishing-rails-4-zombie-outlaws-2/)
