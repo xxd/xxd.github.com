@@ -6,3 +6,4 @@
 - [Android 开源库获取途径整理](http://www.trinea.cn/android/android-open-project-summary/)
 - [整理的Android开发资源](http://stormzhang.github.io/android/2014/06/05/android-awesome-resources/)
 - [Android二维码扫描功能开发](http://www.jikexueyuan.com/course/134.html/?hmsr=dbanotes_erweima)
+- [Android之项目推荐使用的第三方库](http://www.cnblogs.com/lee0oo0/archive/2013/05/19/3086793.html)
