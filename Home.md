@@ -1,17 +1,9 @@
 #### Mobile
 - [iOS](iOS/iOS_page)
     * [UINavigation](iOS/UINavigation)
-    * [UITableView](iOS/UITableView)
-    * [UITableViewCell] (iOS/UITableViewCell)
-    * [UIScrollView](iOS/UIScrollView)
     * [UIButton](iOS/UIButton)
     * [UILabel](iOS/UILabel)
     * [NSFileManager] (iOS/NSFileManager)
-    * 自动布局：
-        * http://objccn.io/issue-3-5/ 【iOS7】
-        * http://answerhuang.duapp.com/index.php/2013/12/03/beginning_auto_layout_tutorial_in_ios7/ 【iOS7】
-        * [iOS8 Size Classes的理解与使用](http://joywii.github.io/blog/2014/09/24/ios8-size-classesde-li-jie-yu-shi-yong/)
-        * [WWDC 2014 Session笔记--可视化开发，IB 的新时代](http://mp.weixin.qq.com/s?__biz=MjM5OTM0MzIwMQ==&mid=201709385&idx=4&sn=722587f51513b1c7fbbfd12697bf74c2#rd)
 
 - [Objective-C](objc/ObjectiveC_page)
     * [@class和#import的区别](objc/class-import)
