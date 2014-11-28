@@ -49,11 +49,6 @@ python -m http.server [port]
 - [监控调优](opsdev/monitorTuning)
 - [网络监控](opsdev/monitorNetwork)
 - [用户管理](opsdev/userManager)
-- [Shell Programming Notes](opsdev/shell-Notes)
-- [sed & awk Notes](opsdev/sed-awk-notes)
-- [Grep](opsdev/grep-notes)
-- [git](opsdev/git-notes)
-- [正则表达式](opsdev/regex-notes)
 
 #### Database
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
