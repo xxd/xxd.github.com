@@ -38,18 +38,6 @@ cocoapods 是可以很方便实现对 第三方包修改的。具体是这样：
 
 - [30款最好的 Bootstrap 3.0 免费主题和模板](www.cnblogs.com/lhb25/p/30-free-bootstrap-templates.html)
 
-#### Python
-- [深入 Python 3](http://sebug.net/paper/books/dive-into-python3/your-first-python-program.html)
-```ruby
-python -m SimpleHTTPServer [port]
-python -m http.server [port]
-```
-
-#### OpsDev(Linux,shell,others)
-- [监控调优](opsdev/monitorTuning)
-- [网络监控](opsdev/monitorNetwork)
-- [用户管理](opsdev/userManager)
-
 #### Database
 参数调优，SQL调优(索引的一些选择)，主从架构设计针对的一些应用，主键设计，Scheme视图的应用，变慢的处理 
 - [PostgreSQL](pgsql/pgsql-page)
