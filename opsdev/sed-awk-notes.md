@@ -9,6 +9,23 @@
 >$ history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 
 ## 应用部分
+
+###sed替换行头
+参考：[sed替换字符时< ' /等符号的处理](http://www.cnblogs.com/buro79xxd/archive/2012/03/21/2410642.html)
+```
+S6570,7/21/2009,CNX-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+S6570,7/11/2009,CNB-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+S6570,7/01/2009,CNC-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+S6570,7/23/2009,CND-TBILLS,USD,1 yr <= duration < 3 yrs,SH_0801017
+S6570,7/01/2009,CNN-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+#需求，在每行前加入 345321334，变为
+345321334,S6570,7/21/2009,CNX-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+345321334,S6570,7/11/2009,CNB-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+345321334,S6570,7/01/2009,CNC-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+345321334,S6570,7/23/2009,CND-TBILLS,USD,1 yr <= duration < 3 yrs,SH_0801017
+345321334,S6570,7/01/2009,CNN-TBILLS,CNY,1 yr <= duration < 3 yrs,SH_0801017
+$ sed 's/^/345321334,/g' a.txt
+```
 ### 查找行号
 ```ruby
 #比如说我想要找到包含"CHECKPOINT PROGRESS RECORDS"是第几行,然后打印之后的文本
