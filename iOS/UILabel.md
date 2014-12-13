@@ -1,9 +1,0 @@
-lineBreakMode 你的选择如下：UILineBreakModeWordWrap:词尾断行。这是默认设置。
-
-- UILineBreakModeClip:词尾断行，但最后一行的断行可以在单词中间。
-- UILineBreakModeCharacterWrap:所有多行文字的断行都可以在单词中间。
-- UILineBreakModeHeadTruncation：在词尾断行
-- UILineBreakModeMiddleTruncation
-- UILineBreakModeTailTruncation
-
-如果一个UILabel至包含了一行文本(numberOfLines的值为1,这是默认值)，然后你可以将adjustsFontSizeToFitWidth的值设为YES，并且，如果你希望标签内的字体缩小得比设置的还要小，从而在标签中显示尽可能多的文字，那么你可以提供一个minimumFontSize。当字体缩小时，如何定位文本是由标签的baselineAdjustment特性来决定。
